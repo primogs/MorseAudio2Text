@@ -36,7 +36,7 @@
  * AudioInSampleRate 44100
  * The value must be in the base unit, eg. seconds if it is a time. Any line starting with a # will be ignorde.
  *
- * \section Compilation of the Source Code
+ * \section Source Code
  * 
  * Sventythree use wxWidgets (version 3.0) for the gui and portaudio (v19) for audio card access. You will need to link against both libaries 
  * to get the full functionality. It is also possible to compile the programm as command line tool reading from stdin.

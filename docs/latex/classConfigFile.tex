@@ -1,0 +1,126 @@
+\hypertarget{classConfigFile}{}\section{Config\+File Class Reference}
+\label{classConfigFile}\index{Config\+File@{Config\+File}}
+
+
+{\ttfamily \#include $<$Config\+File.\+h$>$}
+
+
+
+Inheritance diagram for Config\+File\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classConfigFile__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConfigFile_ab958517fc07a5075b4663e0e46efaed6}\label{classConfigFile_ab958517fc07a5075b4663e0e46efaed6}} 
+void \hyperlink{classConfigFile_ab958517fc07a5075b4663e0e46efaed6}{Reset} ()
+\begin{DoxyCompactList}\small\item\em deletes the stored parameters \end{DoxyCompactList}\item 
+int \hyperlink{classConfigFile_a6dedab9ccb1548b6a0910cee953c0b49}{Get\+Number\+Of\+Variables} ()
+\begin{DoxyCompactList}\small\item\em counts the number of stored parameters \end{DoxyCompactList}\item 
+bool \hyperlink{classConfigFile_a4395577037347f2af515aaeeded9e727}{Get\+Variable} (std\+::string var\+Name, double \&var\+Value)
+\begin{DoxyCompactList}\small\item\em looks if a the parameter is stored and if it is, copies the parameter value \end{DoxyCompactList}\item 
+bool \hyperlink{classConfigFile_aa8874c0773572d6853b09414f16472bb}{Is\+Config\+File\+Available} ()
+\begin{DoxyCompactList}\small\item\em check if config file is available in folder of the program \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfigFile_a60c3135e4354d8f450679130359f5098}\label{classConfigFile_a60c3135e4354d8f450679130359f5098}} 
+void \hyperlink{classConfigFile_a60c3135e4354d8f450679130359f5098}{Read\+Config\+File} ()
+\begin{DoxyCompactList}\small\item\em reads the config file line by line and stores every parameter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classConfigFile_a3be9deb6d7f24b7cff36d5746226a440}{Start\+With\+Hash} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em check if the string starts with a hash. Leading whitespaces are ignored. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConfigFile_a22529d587b96238050d2bf399190cc76}\label{classConfigFile_a22529d587b96238050d2bf399190cc76}} 
+const std\+::string \hyperlink{classConfigFile_a22529d587b96238050d2bf399190cc76}{mp\+Config\+File\+Name}
+\begin{DoxyCompactList}\small\item\em file name of the config file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfigFile_add6ced4a6aba6f2a67e3be298787c074}\label{classConfigFile_add6ced4a6aba6f2a67e3be298787c074}} 
+std\+::list$<$ std\+::tuple$<$ std\+::string, double $>$ $>$ \hyperlink{classConfigFile_add6ced4a6aba6f2a67e3be298787c074}{m\+Variables}
+\begin{DoxyCompactList}\small\item\em parameter list. Each list element is a name/value tuple \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Matthias Hund 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/06/20 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classConfigFile_a6dedab9ccb1548b6a0910cee953c0b49}\label{classConfigFile_a6dedab9ccb1548b6a0910cee953c0b49}} 
+\index{Config\+File@{Config\+File}!Get\+Number\+Of\+Variables@{Get\+Number\+Of\+Variables}}
+\index{Get\+Number\+Of\+Variables@{Get\+Number\+Of\+Variables}!Config\+File@{Config\+File}}
+\subsubsection{\texorpdfstring{Get\+Number\+Of\+Variables()}{GetNumberOfVariables()}}
+{\footnotesize\ttfamily int Config\+File\+::\+Get\+Number\+Of\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+counts the number of stored parameters 
+
+\begin{DoxyReturn}{Returns}
+number of parameters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConfigFile_a4395577037347f2af515aaeeded9e727}\label{classConfigFile_a4395577037347f2af515aaeeded9e727}} 
+\index{Config\+File@{Config\+File}!Get\+Variable@{Get\+Variable}}
+\index{Get\+Variable@{Get\+Variable}!Config\+File@{Config\+File}}
+\subsubsection{\texorpdfstring{Get\+Variable()}{GetVariable()}}
+{\footnotesize\ttfamily bool Config\+File\+::\+Get\+Variable (\begin{DoxyParamCaption}\item[{std\+::string}]{var\+Name,  }\item[{double \&}]{var\+Value }\end{DoxyParamCaption})}
+
+
+
+looks if a the parameter is stored and if it is, copies the parameter value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\+Name} & name of the parameter searched for \\
+\hline
+{\em var\+Value} & value of the parameter if it was stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the parameter was found, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConfigFile_aa8874c0773572d6853b09414f16472bb}\label{classConfigFile_aa8874c0773572d6853b09414f16472bb}} 
+\index{Config\+File@{Config\+File}!Is\+Config\+File\+Available@{Is\+Config\+File\+Available}}
+\index{Is\+Config\+File\+Available@{Is\+Config\+File\+Available}!Config\+File@{Config\+File}}
+\subsubsection{\texorpdfstring{Is\+Config\+File\+Available()}{IsConfigFileAvailable()}}
+{\footnotesize\ttfamily bool Config\+File\+::\+Is\+Config\+File\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+check if config file is available in folder of the program 
+
+\begin{DoxyReturn}{Returns}
+true if a config file was found, otherwise false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConfigFile_a3be9deb6d7f24b7cff36d5746226a440}\label{classConfigFile_a3be9deb6d7f24b7cff36d5746226a440}} 
+\index{Config\+File@{Config\+File}!Start\+With\+Hash@{Start\+With\+Hash}}
+\index{Start\+With\+Hash@{Start\+With\+Hash}!Config\+File@{Config\+File}}
+\subsubsection{\texorpdfstring{Start\+With\+Hash()}{StartWithHash()}}
+{\footnotesize\ttfamily bool Config\+File\+::\+Start\+With\+Hash (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if the string starts with a hash. Leading whitespaces are ignored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & string to be searched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the string starts with a hash, otherwise false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ConfigFile_8h}{Config\+File.\+h}\item 
+Config\+File.\+cpp\end{DoxyCompactItemize}

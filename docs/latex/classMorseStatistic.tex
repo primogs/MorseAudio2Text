@@ -1,0 +1,234 @@
+\hypertarget{classMorseStatistic}{}\section{Morse\+Statistic Class Reference}
+\label{classMorseStatistic}\index{Morse\+Statistic@{Morse\+Statistic}}
+
+
+The morse statistic class collects data from the decode process.  
+
+
+
+
+{\ttfamily \#include $<$Morse\+Statistic.\+h$>$}
+
+
+
+Inheritance diagram for Morse\+Statistic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classMorseStatistic__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMorseStatistic_a48a3dc7e8f56e32caa91689593b07cff}{Morse\+Statistic} ()
+\begin{DoxyCompactList}\small\item\em constructor that initialize the buffer \end{DoxyCompactList}\item 
+virtual \hyperlink{classMorseStatistic_a9eb933dcacfbc2e124208f901faba46d}{$\sim$\+Morse\+Statistic} ()
+\begin{DoxyCompactList}\small\item\em destructor that deletes the buffer \end{DoxyCompactList}\item 
+void \hyperlink{classMorseStatistic_ae5f4ab08849cd2cb724748108309661e}{Stat\+Set\+Buffer\+Size} (int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em delete buffer and create a new one with the desired size \end{DoxyCompactList}\item 
+double \hyperlink{classMorseStatistic_a3347edf33028378ec2009a67c7f5b14d}{Stat\+Get\+Average\+Time} (Morse\+::\+Morse\+Sign sign)
+\begin{DoxyCompactList}\small\item\em averages the duration for a morse sign \end{DoxyCompactList}\item 
+double \hyperlink{classMorseStatistic_af92781be60bdd00871dcb5907939dcb6}{Stat\+Get\+Std\+Dev\+Of\+Time} (Morse\+::\+Morse\+Sign sign)
+\begin{DoxyCompactList}\small\item\em standard deviation for a morse sign \end{DoxyCompactList}\item 
+int \hyperlink{classMorseStatistic_a541c0f03283b2327051bb30e2241753a}{Stat\+Get\+Count} (Morse\+::\+Morse\+Sign sign)
+\begin{DoxyCompactList}\small\item\em counts the amount of durations for a sign stored in the buffer \end{DoxyCompactList}\item 
+int \hyperlink{classMorseStatistic_a92064ea196420fa75a5950a8bdab874e}{Stat\+Edge\+Event\+Buffer\+Full\+Counter} ()
+\begin{DoxyCompactList}\small\item\em returns the edge event buffer full counter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMorseStatistic_afc0c1198ba34c154ce613591861a339b}{Stat\+Add\+Sample} (Morse\+::\+Morse\+Sign sign, double dt)
+\begin{DoxyCompactList}\small\item\em add a sample to the buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMorseStatistic_a9caf4881a3a6843aa0aafd1aeaee14e2}\label{classMorseStatistic_a9caf4881a3a6843aa0aafd1aeaee14e2}} 
+void \hyperlink{classMorseStatistic_a9caf4881a3a6843aa0aafd1aeaee14e2}{Stat\+Edge\+Event\+Buffer\+Full} ()
+\begin{DoxyCompactList}\small\item\em increase the edge event buffer full counter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMorseStatistic_a512955d403a9906f15d550e3f731d810}\label{classMorseStatistic_a512955d403a9906f15d550e3f731d810}} 
+void \hyperlink{classMorseStatistic_a512955d403a9906f15d550e3f731d810}{Delete\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em free the memory used as buffer \end{DoxyCompactList}\item 
+void \hyperlink{classMorseStatistic_adc79128f3c472bef513ce8546c833834}{Init\+Buffer} (int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em allocate memory for the buffer and initialze it \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMorseStatistic_ac778af78c64cc2a700e09dc78dc300a7}\label{classMorseStatistic_ac778af78c64cc2a700e09dc78dc300a7}} 
+Morse\+::\+Morse\+Sign $\ast$ \hyperlink{classMorseStatistic_ac778af78c64cc2a700e09dc78dc300a7}{m\+Morse\+Sign\+Buffer}
+\begin{DoxyCompactList}\small\item\em buffer to store last morse signs \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMorseStatistic_a376ed110e487f81bf51547e28c366d34}\label{classMorseStatistic_a376ed110e487f81bf51547e28c366d34}} 
+double $\ast$ \hyperlink{classMorseStatistic_a376ed110e487f81bf51547e28c366d34}{m\+Morse\+Time\+Buffer}
+\begin{DoxyCompactList}\small\item\em buffer to store duration of the morse signs \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMorseStatistic_a1c05e54ba3bbdf68153cba828bfc019f}\label{classMorseStatistic_a1c05e54ba3bbdf68153cba828bfc019f}} 
+int \hyperlink{classMorseStatistic_a1c05e54ba3bbdf68153cba828bfc019f}{m\+Buffer\+Size}
+\begin{DoxyCompactList}\small\item\em size of the buffers \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMorseStatistic_acf145c45629cca3568ec7d69c94ccce2}\label{classMorseStatistic_acf145c45629cca3568ec7d69c94ccce2}} 
+int \hyperlink{classMorseStatistic_acf145c45629cca3568ec7d69c94ccce2}{m\+Buffer\+Index}
+\begin{DoxyCompactList}\small\item\em index of the buffer element that will be written next \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMorseStatistic_a60c80a05c589975e44063a02bbf9b933}\label{classMorseStatistic_a60c80a05c589975e44063a02bbf9b933}} 
+int \hyperlink{classMorseStatistic_a60c80a05c589975e44063a02bbf9b933}{m\+Edge\+Event\+Buffer\+Full\+Counter}
+\begin{DoxyCompactList}\small\item\em counts how often the edge event buffer overflowed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The morse statistic class collects data from the decode process. 
+
+\begin{DoxyAuthor}{Author}
+Matthias Hund 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05/25/20 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMorseStatistic_a48a3dc7e8f56e32caa91689593b07cff}\label{classMorseStatistic_a48a3dc7e8f56e32caa91689593b07cff}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Morse\+Statistic@{Morse\+Statistic}}
+\index{Morse\+Statistic@{Morse\+Statistic}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Morse\+Statistic()}{MorseStatistic()}}
+{\footnotesize\ttfamily Morse\+Statistic\+::\+Morse\+Statistic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor that initialize the buffer 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMorseStatistic_a9eb933dcacfbc2e124208f901faba46d}\label{classMorseStatistic_a9eb933dcacfbc2e124208f901faba46d}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!````~Morse\+Statistic@{$\sim$\+Morse\+Statistic}}
+\index{````~Morse\+Statistic@{$\sim$\+Morse\+Statistic}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{$\sim$\+Morse\+Statistic()}{~MorseStatistic()}}
+{\footnotesize\ttfamily Morse\+Statistic\+::$\sim$\+Morse\+Statistic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+destructor that deletes the buffer 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMorseStatistic_adc79128f3c472bef513ce8546c833834}\label{classMorseStatistic_adc79128f3c472bef513ce8546c833834}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Init\+Buffer@{Init\+Buffer}}
+\index{Init\+Buffer@{Init\+Buffer}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Init\+Buffer()}{InitBuffer()}}
+{\footnotesize\ttfamily void Morse\+Statistic\+::\+Init\+Buffer (\begin{DoxyParamCaption}\item[{int}]{buffer\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+allocate memory for the buffer and initialze it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMorseStatistic_afc0c1198ba34c154ce613591861a339b}\label{classMorseStatistic_afc0c1198ba34c154ce613591861a339b}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Stat\+Add\+Sample@{Stat\+Add\+Sample}}
+\index{Stat\+Add\+Sample@{Stat\+Add\+Sample}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Stat\+Add\+Sample()}{StatAddSample()}}
+{\footnotesize\ttfamily void Morse\+Statistic\+::\+Stat\+Add\+Sample (\begin{DoxyParamCaption}\item[{Morse\+::\+Morse\+Sign}]{sign,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+add a sample to the buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & morse sign that is added \\
+\hline
+{\em dt} & duration that is addef \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMorseStatistic_a92064ea196420fa75a5950a8bdab874e}\label{classMorseStatistic_a92064ea196420fa75a5950a8bdab874e}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Stat\+Edge\+Event\+Buffer\+Full\+Counter@{Stat\+Edge\+Event\+Buffer\+Full\+Counter}}
+\index{Stat\+Edge\+Event\+Buffer\+Full\+Counter@{Stat\+Edge\+Event\+Buffer\+Full\+Counter}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Stat\+Edge\+Event\+Buffer\+Full\+Counter()}{StatEdgeEventBufferFullCounter()}}
+{\footnotesize\ttfamily int Morse\+Statistic\+::\+Stat\+Edge\+Event\+Buffer\+Full\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the edge event buffer full counter 
+
+\begin{DoxyReturn}{Returns}
+edge event buffer full counter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMorseStatistic_a3347edf33028378ec2009a67c7f5b14d}\label{classMorseStatistic_a3347edf33028378ec2009a67c7f5b14d}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Stat\+Get\+Average\+Time@{Stat\+Get\+Average\+Time}}
+\index{Stat\+Get\+Average\+Time@{Stat\+Get\+Average\+Time}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Stat\+Get\+Average\+Time()}{StatGetAverageTime()}}
+{\footnotesize\ttfamily double Morse\+Statistic\+::\+Stat\+Get\+Average\+Time (\begin{DoxyParamCaption}\item[{Morse\+::\+Morse\+Sign}]{sign }\end{DoxyParamCaption})}
+
+
+
+averages the duration for a morse sign 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & morse sign for which the average is calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the average duration in seconds of the sign 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMorseStatistic_a541c0f03283b2327051bb30e2241753a}\label{classMorseStatistic_a541c0f03283b2327051bb30e2241753a}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Stat\+Get\+Count@{Stat\+Get\+Count}}
+\index{Stat\+Get\+Count@{Stat\+Get\+Count}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Stat\+Get\+Count()}{StatGetCount()}}
+{\footnotesize\ttfamily int Morse\+Statistic\+::\+Stat\+Get\+Count (\begin{DoxyParamCaption}\item[{Morse\+::\+Morse\+Sign}]{sign }\end{DoxyParamCaption})}
+
+
+
+counts the amount of durations for a sign stored in the buffer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & morse sign \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+durations stored in the buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMorseStatistic_af92781be60bdd00871dcb5907939dcb6}\label{classMorseStatistic_af92781be60bdd00871dcb5907939dcb6}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Stat\+Get\+Std\+Dev\+Of\+Time@{Stat\+Get\+Std\+Dev\+Of\+Time}}
+\index{Stat\+Get\+Std\+Dev\+Of\+Time@{Stat\+Get\+Std\+Dev\+Of\+Time}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Stat\+Get\+Std\+Dev\+Of\+Time()}{StatGetStdDevOfTime()}}
+{\footnotesize\ttfamily double Morse\+Statistic\+::\+Stat\+Get\+Std\+Dev\+Of\+Time (\begin{DoxyParamCaption}\item[{Morse\+::\+Morse\+Sign}]{sign }\end{DoxyParamCaption})}
+
+
+
+standard deviation for a morse sign 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sign} & morse sign for which the standard deviation is calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the standard deviation of the sign 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMorseStatistic_ae5f4ab08849cd2cb724748108309661e}\label{classMorseStatistic_ae5f4ab08849cd2cb724748108309661e}} 
+\index{Morse\+Statistic@{Morse\+Statistic}!Stat\+Set\+Buffer\+Size@{Stat\+Set\+Buffer\+Size}}
+\index{Stat\+Set\+Buffer\+Size@{Stat\+Set\+Buffer\+Size}!Morse\+Statistic@{Morse\+Statistic}}
+\subsubsection{\texorpdfstring{Stat\+Set\+Buffer\+Size()}{StatSetBufferSize()}}
+{\footnotesize\ttfamily void Morse\+Statistic\+::\+Stat\+Set\+Buffer\+Size (\begin{DoxyParamCaption}\item[{int}]{buffer\+Size }\end{DoxyParamCaption})}
+
+
+
+delete buffer and create a new one with the desired size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Size} & size of the new buffer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{MorseStatistic_8h}{Morse\+Statistic.\+h}\item 
+Morse\+Statistic.\+cpp\end{DoxyCompactItemize}
