@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classMorseStatistic.html" title="The morse statistic class collects data from the decode process. " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$classMorseDecode.html" title="The morse decoder class process a audio stream and output morse signals as a text. " alt="" coords="160,5,263,32"/>
+</map>

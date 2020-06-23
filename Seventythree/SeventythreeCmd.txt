@@ -1,0 +1,1 @@
+./Release/MainCmdLine.cpp.o ./Release/MorseDecode.cpp.o ./Release/MorseStatistic.cpp.o

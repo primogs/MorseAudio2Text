@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# self defined
+*.workspace
+Makefile
+*.project
+*.mk
+*.bak
+*.7z
+.codelite/*
+
