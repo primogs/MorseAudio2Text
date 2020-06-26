@@ -121,8 +121,8 @@ namespace Morse
 	const char* Sign_7 [] = {"ß"};
 
 	const uint16_t SignSequence_8 [] = {
-											0b00000000, // " Irrung "
+											0b00000000, // " mistake "
 										};
-	const char* Sign_8 [] = {" Irrung "};
+	const char* Sign_8 [] = {" mistake "};
 }
 #endif

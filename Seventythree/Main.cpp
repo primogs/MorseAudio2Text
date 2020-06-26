@@ -22,7 +22,7 @@
  *
  * \section Introduction
  *
- * Sventythree converts a morse signal from a audio stream to a text. The audio stream is recorded with the sound card. A recorded audio file 
+ * Sventythree converts a morse signal from a audio stream to a text. The audio stream is recorded with the sound card. A audio file 
  * can be decoded if the soundcard output is conected with the input by a wire. An additional prefilter is maybe required if the audio stream is 
  * very noisy. For more information about the decoding see MorseDecode class.
  *
@@ -31,10 +31,9 @@
  * A configuration file can be used to parameterize the programm. The configuration must be named "config.txt" and placed in the same folder as 
  * the executable file. Following parameter are supported: MaxMemoryConsumption, AudioInSampleRate, MaxAmplitude, AutoThresholdFactor, 
  * MinThreshold, DotTimeLowerLimit, DotTimeUpperLimit, StableDotTimeInaccuracy, MaxMorseSignsPerChar, DebounceBounceTime, LowPassDecayRate, 
- * AutoThresholdDecayRate, AveTimeBufferLength, ShortTimeBufferLength,StableDotTimeBufferLength, EdgeEventBufferLength, TextBufferLength
- * A parameter is expected as name value pair in a single row eg.
- * AudioInSampleRate 44100
- * The value must be in the base unit, eg. seconds if it is a time. Any line starting with a # will be ignorde.
+ * AutoThresholdDecayRate, AveTimeBufferLength, ShortTimeBufferLength,StableDotTimeBufferLength, EdgeEventBufferLength and TextBufferLength.
+ * A parameter is expected as name/value pair in a single row eg. "AudioInSampleRate 44100". The value must be in the base unit, eg. seconds 
+ * if it is a time. Any line starting with a # will be ignorde.
  *
  * \section Source Code
  * 
