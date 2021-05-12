@@ -49,7 +49,7 @@ private:
 	unsigned short *mToneCounts;	//!< local copy of the tone histogram
 	unsigned short *mPauseCounts;	//!< local copy of the pause histogram
 	unsigned short  mBins;			//!< number of bins
-	double			mMaxPeriod;
+	double			mMaxPeriod;		//!< largest period that still is considered in the histogram
 	unsigned short  mMaxCount;		//!< maximum value of tone and paus histogram used for normalization.Is at least one to avoid division by zero.
 };
 

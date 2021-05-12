@@ -1,0 +1,10 @@
+<map id="MainDialog.h" name="MainDialog.h">
+<area shape="rect" id="node5" href="$MorseGUI_8h_source.html" title="MorseGUI.h" alt="" coords="1566,155,1659,181"/>
+<area shape="rect" id="node34" href="$MorseDecode_8h.html" title="MorseDecode.h" alt="" coords="3071,80,3186,107"/>
+<area shape="rect" id="node42" href="$ConfigFile_8h.html" title="Reads configuration from a file. Each line of the file should be empty, a comment or ar parameter nam..." alt="" coords="29,229,121,256"/>
+<area shape="rect" id="node46" href="$HistogramDialog_8h.html" title="HistogramDialog.h" alt="" coords="1617,80,1747,107"/>
+<area shape="rect" id="node9" href="$HistogramPanel_8h.html" title="HistogramPanel.h" alt="" coords="1976,229,2103,256"/>
+<area shape="rect" id="node39" href="$MorseDataTypes_8h_source.html" title="MorseDataTypes.h" alt="" coords="3281,229,3414,256"/>
+<area shape="rect" id="node40" href="$MorseStatistic_8h.html" title="MorseStatistic.h" alt="" coords="3118,155,3235,181"/>
+<area shape="rect" id="node41" href="$HistogramData_8h.html" title="HistogramData.h" alt="" coords="3135,229,3256,256"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Global" name="Global">
+<area shape="rect" id="node2" href="$classMorseDecode.html" title="The morse decoder class process a audio stream and output morse signals as a text. " alt="" coords="9,185,112,212"/>
+<area shape="rect" id="node3" href="$classMorseStatistic.html" title="The morse statistic class collects data from the decode process. " alt="" coords="7,109,114,136"/>
+<area shape="rect" id="node4" href="$classHistogramData.html" title="The histogram data class stores the data of the histogram and provide methods to add data and retriev..." alt="" coords="5,5,116,32"/>
+</map>

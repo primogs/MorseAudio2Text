@@ -1,0 +1,265 @@
+\hypertarget{classMainDialog}{}\section{Main\+Dialog Class Reference}
+\label{classMainDialog}\index{Main\+Dialog@{Main\+Dialog}}
+
+
+{\ttfamily \#include $<$Main\+Dialog.\+h$>$}
+
+
+
+Inheritance diagram for Main\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classMainDialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Main\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classMainDialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMainDialog_ae4bae8f15a5729712a7fd4effd078063}{Main\+Dialog} (wx\+Window $\ast$parent)
+\begin{DoxyCompactList}\small\item\em constructor of the main dialog. Does some setups. \end{DoxyCompactList}\item 
+\hyperlink{classMainDialog_a33d8e8327530b31387876b19f6542cc5}{$\sim$\+Main\+Dialog} ()
+\begin{DoxyCompactList}\small\item\em destructor of the main dialog, that will stop any processing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classMainDialog_a17fec54d5486bc4e44052bcef47f3fcc}{On\+Close\+Dialog} (wx\+Close\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if the user want to close application destroy it \end{DoxyCompactList}\item 
+void \hyperlink{classMainDialog_a505dcb8188eafd19d3fe21b382ec7fe7}{on\+Button\+Stop} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if \char`\"{}stop\char`\"{} button is pressed finish listen thread and stop update timer \end{DoxyCompactList}\item 
+void \hyperlink{classMainDialog_a4feedd725b68a028c72c2227c4c55976}{on\+Button\+Start} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if \char`\"{}start\char`\"{} button is pressed run listen thread and start timer to update widgets repeatedly \end{DoxyCompactList}\item 
+void \hyperlink{classMainDialog_a121d263ec1ae91147a8947dad64b984f}{on\+Clear\+Output\+Txt} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if \char`\"{}clear\char`\"{} button is pushed, clear the decoded output text of the tect control widget \end{DoxyCompactList}\item 
+void \hyperlink{classMainDialog_a562ef211b7cfd5ae24a9f04f41ccb67e}{on\+Timer\+Out} (wx\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if timer is elapsed, update variables and the widgets int the morse output section \end{DoxyCompactList}\item 
+void \hyperlink{classMainDialog_a2b15d3ae06d0b3e1246bcd012f8f758a}{on\+Timer\+Stat} (wx\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if timer is elapsed, update variables and the widgets int the statistic section \end{DoxyCompactList}\item 
+void \hyperlink{classMainDialog_a6c56256388bab3fe16995c722a072d33}{on\+Gain\+Scroll} (wx\+Scroll\+Event \&event)
+\begin{DoxyCompactList}\small\item\em if slider is moved change gain by setting a new maximal amplitude \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainDialog_afcdc2324728aa4e44b4a8a7e2686cf24}\label{classMainDialog_afcdc2324728aa4e44b4a8a7e2686cf24}} 
+void {\bfseries On\+Show\+Histogram} (wx\+Command\+Event \&event)
+\item 
+\mbox{\Hypertarget{classMainDialog_acc02224a5aa1dd5a8db355dcd6d04a8d}\label{classMainDialog_acc02224a5aa1dd5a8db355dcd6d04a8d}} 
+void {\bfseries On\+Close} (wx\+Command\+Event \&event)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainDialog_ada04a88fdfc5b3b0921e26f23f7f1fc4}\label{classMainDialog_ada04a88fdfc5b3b0921e26f23f7f1fc4}} 
+void \hyperlink{classMainDialog_ada04a88fdfc5b3b0921e26f23f7f1fc4}{Setup\+Morse\+Decode} ()
+\begin{DoxyCompactList}\small\item\em read parameter if available and setup the \hyperlink{classMorseDecode}{Morse\+Decode} instance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainDialog_acd93dbfb870680e4dff510d88f1d3125}\label{classMainDialog_acd93dbfb870680e4dff510d88f1d3125}} 
+void {\bfseries Clear\+Widgets} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMainDialog_af4537bbf090137035880a13f50cb9789}\label{classMainDialog_af4537bbf090137035880a13f50cb9789}} 
+std\+::thread $\ast$ \hyperlink{classMainDialog_af4537bbf090137035880a13f50cb9789}{mp\+Listen\+Thread}
+\begin{DoxyCompactList}\small\item\em pointer to the listen thread that process the audio data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainDialog_ae61ec8f7594554de53ccbf6fea4e7493}\label{classMainDialog_ae61ec8f7594554de53ccbf6fea4e7493}} 
+std\+::time\+\_\+t \hyperlink{classMainDialog_ae61ec8f7594554de53ccbf6fea4e7493}{m\+Timer\+No\+Receive}
+\begin{DoxyCompactList}\small\item\em timestamp used to check if nothing is received \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainDialog_a12e6e6ff1f1d3532b607d0ada1e3698d}\label{classMainDialog_a12e6e6ff1f1d3532b607d0ada1e3698d}} 
+std\+::time\+\_\+t \hyperlink{classMainDialog_a12e6e6ff1f1d3532b607d0ada1e3698d}{m\+Flush\+Timeout}
+\begin{DoxyCompactList}\small\item\em time interval before output is flushed \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMainDialog_a9abeb88ddd08e9f442ff3be153a8e6c4}\label{classMainDialog_a9abeb88ddd08e9f442ff3be153a8e6c4}} 
+unsigned int \hyperlink{classMainDialog_a9abeb88ddd08e9f442ff3be153a8e6c4}{m\+Add\+New\+Line}
+\begin{DoxyCompactList}\small\item\em helper variable used to add a new line if nothing is received for a while \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Implementing \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}
+
+\begin{DoxyAuthor}{Author}
+Matthias Hund 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/06/20 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMainDialog_ae4bae8f15a5729712a7fd4effd078063}\label{classMainDialog_ae4bae8f15a5729712a7fd4effd078063}} 
+\index{Main\+Dialog@{Main\+Dialog}!Main\+Dialog@{Main\+Dialog}}
+\index{Main\+Dialog@{Main\+Dialog}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{Main\+Dialog()}{MainDialog()}}
+{\footnotesize\ttfamily Main\+Dialog\+::\+Main\+Dialog (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+constructor of the main dialog. Does some setups. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMainDialog_a33d8e8327530b31387876b19f6542cc5}\label{classMainDialog_a33d8e8327530b31387876b19f6542cc5}} 
+\index{Main\+Dialog@{Main\+Dialog}!````~Main\+Dialog@{$\sim$\+Main\+Dialog}}
+\index{````~Main\+Dialog@{$\sim$\+Main\+Dialog}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{$\sim$\+Main\+Dialog()}{~MainDialog()}}
+{\footnotesize\ttfamily Main\+Dialog\+::$\sim$\+Main\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destructor of the main dialog, that will stop any processing 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainDialog_a4feedd725b68a028c72c2227c4c55976}\label{classMainDialog_a4feedd725b68a028c72c2227c4c55976}} 
+\index{Main\+Dialog@{Main\+Dialog}!on\+Button\+Start@{on\+Button\+Start}}
+\index{on\+Button\+Start@{on\+Button\+Start}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{on\+Button\+Start()}{onButtonStart()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::on\+Button\+Start (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if \char`\"{}start\char`\"{} button is pressed run listen thread and start timer to update widgets repeatedly 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+\mbox{\Hypertarget{classMainDialog_a505dcb8188eafd19d3fe21b382ec7fe7}\label{classMainDialog_a505dcb8188eafd19d3fe21b382ec7fe7}} 
+\index{Main\+Dialog@{Main\+Dialog}!on\+Button\+Stop@{on\+Button\+Stop}}
+\index{on\+Button\+Stop@{on\+Button\+Stop}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{on\+Button\+Stop()}{onButtonStop()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::on\+Button\+Stop (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if \char`\"{}stop\char`\"{} button is pressed finish listen thread and stop update timer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+\mbox{\Hypertarget{classMainDialog_a121d263ec1ae91147a8947dad64b984f}\label{classMainDialog_a121d263ec1ae91147a8947dad64b984f}} 
+\index{Main\+Dialog@{Main\+Dialog}!on\+Clear\+Output\+Txt@{on\+Clear\+Output\+Txt}}
+\index{on\+Clear\+Output\+Txt@{on\+Clear\+Output\+Txt}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{on\+Clear\+Output\+Txt()}{onClearOutputTxt()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::on\+Clear\+Output\+Txt (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if \char`\"{}clear\char`\"{} button is pushed, clear the decoded output text of the tect control widget 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+\mbox{\Hypertarget{classMainDialog_a17fec54d5486bc4e44052bcef47f3fcc}\label{classMainDialog_a17fec54d5486bc4e44052bcef47f3fcc}} 
+\index{Main\+Dialog@{Main\+Dialog}!On\+Close\+Dialog@{On\+Close\+Dialog}}
+\index{On\+Close\+Dialog@{On\+Close\+Dialog}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{On\+Close\+Dialog()}{OnCloseDialog()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::\+On\+Close\+Dialog (\begin{DoxyParamCaption}\item[{wx\+Close\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if the user want to close application destroy it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+\mbox{\Hypertarget{classMainDialog_a6c56256388bab3fe16995c722a072d33}\label{classMainDialog_a6c56256388bab3fe16995c722a072d33}} 
+\index{Main\+Dialog@{Main\+Dialog}!on\+Gain\+Scroll@{on\+Gain\+Scroll}}
+\index{on\+Gain\+Scroll@{on\+Gain\+Scroll}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{on\+Gain\+Scroll()}{onGainScroll()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::on\+Gain\+Scroll (\begin{DoxyParamCaption}\item[{wx\+Scroll\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if slider is moved change gain by setting a new maximal amplitude 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+\mbox{\Hypertarget{classMainDialog_a562ef211b7cfd5ae24a9f04f41ccb67e}\label{classMainDialog_a562ef211b7cfd5ae24a9f04f41ccb67e}} 
+\index{Main\+Dialog@{Main\+Dialog}!on\+Timer\+Out@{on\+Timer\+Out}}
+\index{on\+Timer\+Out@{on\+Timer\+Out}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{on\+Timer\+Out()}{onTimerOut()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::on\+Timer\+Out (\begin{DoxyParamCaption}\item[{wx\+Timer\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if timer is elapsed, update variables and the widgets int the morse output section 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+\mbox{\Hypertarget{classMainDialog_a2b15d3ae06d0b3e1246bcd012f8f758a}\label{classMainDialog_a2b15d3ae06d0b3e1246bcd012f8f758a}} 
+\index{Main\+Dialog@{Main\+Dialog}!on\+Timer\+Stat@{on\+Timer\+Stat}}
+\index{on\+Timer\+Stat@{on\+Timer\+Stat}!Main\+Dialog@{Main\+Dialog}}
+\subsubsection{\texorpdfstring{on\+Timer\+Stat()}{onTimerStat()}}
+{\footnotesize\ttfamily void Main\+Dialog\+::on\+Timer\+Stat (\begin{DoxyParamCaption}\item[{wx\+Timer\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+if timer is elapsed, update variables and the widgets int the statistic section 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classMainDialogBase}{Main\+Dialog\+Base}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{MainDialog_8h}{Main\+Dialog.\+h}\item 
+Main\+Dialog.\+cpp\end{DoxyCompactItemize}

@@ -252,7 +252,7 @@ unsigned short MorseStatistic::GetHistPauseBinCount(unsigned short bin)
 
 /**
  * @brief return the number of histogram bins 
- * @return return the number of bins
+ * @return the number of bins
  */
 unsigned short MorseStatistic::GetNumberOfBins()
 {
@@ -263,6 +263,10 @@ unsigned short MorseStatistic::GetNumberOfBins()
 	return binsPause;
 }
 
+/**
+ * @brief largest period that is currently in the histogram 
+ * @return period in seconds
+ */
 double MorseStatistic::GetMaxPeriod()
 {
 	const double periodTone = mHistTone.GetMaxPeriod();

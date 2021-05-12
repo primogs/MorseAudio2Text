@@ -1,0 +1,11 @@
+<map id="Main.h" name="Main.h">
+<area shape="rect" id="node3" href="$MainDialog_8h.html" title="subclass of the wxFormBuilder generated MainDialogBase that inherit the elements of the gui and add s..." alt="" coords="344,80,443,107"/>
+<area shape="rect" id="node7" href="$MorseGUI_8h_source.html" title="MorseGUI.h" alt="" coords="1692,229,1786,256"/>
+<area shape="rect" id="node35" href="$MorseDecode_8h.html" title="MorseDecode.h" alt="" coords="336,155,451,181"/>
+<area shape="rect" id="node43" href="$ConfigFile_8h.html" title="Reads configuration from a file. Each line of the file should be empty, a comment or ar parameter nam..." alt="" coords="3337,304,3429,331"/>
+<area shape="rect" id="node47" href="$HistogramDialog_8h.html" title="HistogramDialog.h" alt="" coords="1538,155,1668,181"/>
+<area shape="rect" id="node11" href="$HistogramPanel_8h.html" title="HistogramPanel.h" alt="" coords="1676,304,1802,331"/>
+<area shape="rect" id="node40" href="$MorseDataTypes_8h_source.html" title="MorseDataTypes.h" alt="" coords="274,304,407,331"/>
+<area shape="rect" id="node41" href="$MorseStatistic_8h.html" title="MorseStatistic.h" alt="" coords="186,229,303,256"/>
+<area shape="rect" id="node42" href="$HistogramData_8h.html" title="HistogramData.h" alt="" coords="128,304,249,331"/>
+</map>

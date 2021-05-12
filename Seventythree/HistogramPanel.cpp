@@ -55,6 +55,9 @@ HistogramPanel::~HistogramPanel()
 	Disconnect( wxEVT_PAINT, wxPaintEventHandler( HistogramPanel::OnPaintHistogramPanel ), NULL, this );
 }
 
+/**
+ * @brief free the allocated memory
+ */	
 void HistogramPanel::FreeBuffer()
 {
 	if(mToneCounts != nullptr)
@@ -65,6 +68,10 @@ void HistogramPanel::FreeBuffer()
 	mPauseCounts = nullptr;
 }
 
+/**
+ * @brief reallocate the memory
+ * @param elements: number of elements memory is allocated for
+ */	
 void HistogramPanel::ResizeBuffer(unsigned short elements)
 {
 	FreeBuffer();

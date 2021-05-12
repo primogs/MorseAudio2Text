@@ -1,0 +1,146 @@
+\hypertarget{classHistogramDialog}{}\section{Histogram\+Dialog Class Reference}
+\label{classHistogramDialog}\index{Histogram\+Dialog@{Histogram\+Dialog}}
+
+
+Window of a dialog that shows the histogram.  
+
+
+
+
+{\ttfamily \#include $<$Histogram\+Dialog.\+h$>$}
+
+
+
+Inheritance diagram for Histogram\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classHistogramDialog__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Histogram\+Dialog\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classHistogramDialog__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramDialog_ab76f6dad4e2ee061e80de94f33f0e68c}\label{classHistogramDialog_ab76f6dad4e2ee061e80de94f33f0e68c}} 
+\hyperlink{classHistogramDialog_ab76f6dad4e2ee061e80de94f33f0e68c}{Histogram\+Dialog} (wx\+Window $\ast$parent, wx\+Window\+ID id=wx\+I\+D\+\_\+\+A\+NY, const wx\+String \&title=\+\_\+(\char`\"{}Period \hyperlink{classHistogram}{Histogram}\char`\"{}), const wx\+Point \&pos=wx\+Default\+Position, const wx\+Size \&size=wx\+Default\+Size, long style=wx\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+S\+T\+Y\+LE)
+\begin{DoxyCompactList}\small\item\em constructor of the histogram dialog class \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramDialog_a43d2e19cd3d198f6c6d825a9c1bea643}\label{classHistogramDialog_a43d2e19cd3d198f6c6d825a9c1bea643}} 
+virtual \hyperlink{classHistogramDialog_a43d2e19cd3d198f6c6d825a9c1bea643}{$\sim$\+Histogram\+Dialog} ()
+\begin{DoxyCompactList}\small\item\em default destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classHistogramDialog_a6a9c1ccefa792e8fdc0c3a846fecbe9b}{On\+Close\+Dialog} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em close the dialog if user close the window \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramDialog_ac382ffacb7bbd761b95bb08b94517cb1}{On\+Histogram\+Timer} (wx\+Timer\+Event \&event)
+\begin{DoxyCompactList}\small\item\em event that is triggered by a timer to update the histogram repeadly \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramDialog_a3212f57cc24b1f904ff3109820cae5c1}{On\+Cb\+Tone} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em event that is triggered if the tone check box is clicked.\+Periods of tones are evaluated if the box is checked. \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramDialog_a52b28f05b31b490b10d6ed833ddff795}{On\+Cb\+Pause} (wx\+Command\+Event \&event)
+\begin{DoxyCompactList}\small\item\em event that is triggered if the pause check box is clicked.\+Periods of pauses are evaluated if the box is checked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Window of a dialog that shows the histogram. 
+
+\begin{DoxyAuthor}{Author}
+Matthias Hund 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/20/21 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHistogramDialog_a52b28f05b31b490b10d6ed833ddff795}\label{classHistogramDialog_a52b28f05b31b490b10d6ed833ddff795}} 
+\index{Histogram\+Dialog@{Histogram\+Dialog}!On\+Cb\+Pause@{On\+Cb\+Pause}}
+\index{On\+Cb\+Pause@{On\+Cb\+Pause}!Histogram\+Dialog@{Histogram\+Dialog}}
+\subsubsection{\texorpdfstring{On\+Cb\+Pause()}{OnCbPause()}}
+{\footnotesize\ttfamily void Histogram\+Dialog\+::\+On\+Cb\+Pause (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+event that is triggered if the pause check box is clicked.\+Periods of pauses are evaluated if the box is checked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the wx\+Command\+Event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHistogram}{Histogram}.
+
+\mbox{\Hypertarget{classHistogramDialog_a3212f57cc24b1f904ff3109820cae5c1}\label{classHistogramDialog_a3212f57cc24b1f904ff3109820cae5c1}} 
+\index{Histogram\+Dialog@{Histogram\+Dialog}!On\+Cb\+Tone@{On\+Cb\+Tone}}
+\index{On\+Cb\+Tone@{On\+Cb\+Tone}!Histogram\+Dialog@{Histogram\+Dialog}}
+\subsubsection{\texorpdfstring{On\+Cb\+Tone()}{OnCbTone()}}
+{\footnotesize\ttfamily void Histogram\+Dialog\+::\+On\+Cb\+Tone (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+event that is triggered if the tone check box is clicked.\+Periods of tones are evaluated if the box is checked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the wx\+Command\+Event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHistogram}{Histogram}.
+
+\mbox{\Hypertarget{classHistogramDialog_a6a9c1ccefa792e8fdc0c3a846fecbe9b}\label{classHistogramDialog_a6a9c1ccefa792e8fdc0c3a846fecbe9b}} 
+\index{Histogram\+Dialog@{Histogram\+Dialog}!On\+Close\+Dialog@{On\+Close\+Dialog}}
+\index{On\+Close\+Dialog@{On\+Close\+Dialog}!Histogram\+Dialog@{Histogram\+Dialog}}
+\subsubsection{\texorpdfstring{On\+Close\+Dialog()}{OnCloseDialog()}}
+{\footnotesize\ttfamily void Histogram\+Dialog\+::\+On\+Close\+Dialog (\begin{DoxyParamCaption}\item[{wx\+Command\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+close the dialog if user close the window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the wx\+Command\+Event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHistogram}{Histogram}.
+
+\mbox{\Hypertarget{classHistogramDialog_ac382ffacb7bbd761b95bb08b94517cb1}\label{classHistogramDialog_ac382ffacb7bbd761b95bb08b94517cb1}} 
+\index{Histogram\+Dialog@{Histogram\+Dialog}!On\+Histogram\+Timer@{On\+Histogram\+Timer}}
+\index{On\+Histogram\+Timer@{On\+Histogram\+Timer}!Histogram\+Dialog@{Histogram\+Dialog}}
+\subsubsection{\texorpdfstring{On\+Histogram\+Timer()}{OnHistogramTimer()}}
+{\footnotesize\ttfamily void Histogram\+Dialog\+::\+On\+Histogram\+Timer (\begin{DoxyParamCaption}\item[{wx\+Timer\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+event that is triggered by a timer to update the histogram repeadly 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the wx\+Timer\+Event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classHistogram}{Histogram}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HistogramDialog_8h}{Histogram\+Dialog.\+h}\item 
+Histogram\+Dialog.\+cpp\end{DoxyCompactItemize}

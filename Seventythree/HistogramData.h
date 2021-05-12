@@ -51,7 +51,7 @@ private:
 
 	const unsigned short 	mBins;			//!< number of bins the histgram has -> elements of mBinBuffer
 	const unsigned short	mBufferSize;	//!< number of elements that are stored at once -> elements in mHistogram
-	const double 			mMaxPeriod;		//!< maximal period that evaluated in the histogram
+	const double 			mMaxPeriod;		//!< upper boundary of the period
 	unsigned short		*	mBinBuffer;		//!< array that stores the counts for each bin
 	int						mIndex;			//!< index of the first/last element of the ring buffer mHistogram
 	unsigned short		*	mHistogram;		//!< ring buffer to realize the FIFO buffer

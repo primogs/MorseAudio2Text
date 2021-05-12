@@ -1,0 +1,191 @@
+\hypertarget{classHistogramData}{}\section{Histogram\+Data Class Reference}
+\label{classHistogramData}\index{Histogram\+Data@{Histogram\+Data}}
+
+
+The histogram data class stores the data of the histogram and provide methods to add data and retrieve histogram data.  
+
+
+
+
+{\ttfamily \#include $<$Histogram\+Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramData_a382c81f15b29a67116f3fb30d9a33b8a}\label{classHistogramData_a382c81f15b29a67116f3fb30d9a33b8a}} 
+\hyperlink{classHistogramData_a382c81f15b29a67116f3fb30d9a33b8a}{Histogram\+Data} (unsigned short bins=50, unsigned short length=75, double max\+Period=0.\+5)
+\begin{DoxyCompactList}\small\item\em constructor of histogram data that allocates and intialize the memory for the histogram data \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_a4469655db4ea251dc664d6537ac56c5a}\label{classHistogramData_a4469655db4ea251dc664d6537ac56c5a}} 
+virtual \hyperlink{classHistogramData_a4469655db4ea251dc664d6537ac56c5a}{$\sim$\+Histogram\+Data} ()
+\begin{DoxyCompactList}\small\item\em destructor that will free the histogram data \end{DoxyCompactList}\item 
+bool \hyperlink{classHistogramData_ae0639913744c2edaa4d688b22a753b6e}{Is\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em return the state of the histogram \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramData_ab9313f2ca9852a85fd9f7da57c40f95b}{Add} (double period)
+\begin{DoxyCompactList}\small\item\em add the period and remove the oldest period from the histogram if enabled \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramData_ab3908c587c2e03741d4ca05f84fbc82f}{Enable} (bool state)
+\begin{DoxyCompactList}\small\item\em set the state of the histogram \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classHistogramData_a9ee374cc3bab303463c9a7788b7e7b6f}{Get\+Bins} ()
+\begin{DoxyCompactList}\small\item\em number of histogram bins \end{DoxyCompactList}\item 
+double \hyperlink{classHistogramData_a9f1db31342e0a70473c2ab61cc0e0f22}{Get\+Max\+Period} ()
+\begin{DoxyCompactList}\small\item\em maximal period that is still displayed in the histogram \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classHistogramData_a49e967388837f909afb328f9e55da205}{Get\+Hist\+Bin\+Count} (unsigned short bin)
+\begin{DoxyCompactList}\small\item\em to get the counts in a bin \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramData_af625e098e04198007b4d96de4ac624d1}\label{classHistogramData_af625e098e04198007b4d96de4ac624d1}} 
+void \hyperlink{classHistogramData_af625e098e04198007b4d96de4ac624d1}{Init} ()
+\begin{DoxyCompactList}\small\item\em initialize the histogram data. After initialization all counts are in the first bin. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classHistogramData_af38a5e6485965296d7c02f8f57a92bb5}{Get\+Bin} (double period)
+\begin{DoxyCompactList}\small\item\em determines the bin number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramData_af2215c60a41f6ee19aaeb8be1cdd2392}\label{classHistogramData_af2215c60a41f6ee19aaeb8be1cdd2392}} 
+const unsigned short \hyperlink{classHistogramData_af2215c60a41f6ee19aaeb8be1cdd2392}{m\+Bins}
+\begin{DoxyCompactList}\small\item\em number of bins the histgram has -\/$>$ elements of m\+Bin\+Buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_adbf055d8f7bffe7e5e8a2c09936f8578}\label{classHistogramData_adbf055d8f7bffe7e5e8a2c09936f8578}} 
+const unsigned short \hyperlink{classHistogramData_adbf055d8f7bffe7e5e8a2c09936f8578}{m\+Buffer\+Size}
+\begin{DoxyCompactList}\small\item\em number of elements that are stored at once -\/$>$ elements in m\+Histogram \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_a23bc716ad89d0ab89c93b4174c22f1a9}\label{classHistogramData_a23bc716ad89d0ab89c93b4174c22f1a9}} 
+const double \hyperlink{classHistogramData_a23bc716ad89d0ab89c93b4174c22f1a9}{m\+Max\+Period}
+\begin{DoxyCompactList}\small\item\em upper boundary of the period \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_a3dc6361d2669ffd9b3df032b83a5809c}\label{classHistogramData_a3dc6361d2669ffd9b3df032b83a5809c}} 
+unsigned short $\ast$ \hyperlink{classHistogramData_a3dc6361d2669ffd9b3df032b83a5809c}{m\+Bin\+Buffer}
+\begin{DoxyCompactList}\small\item\em array that stores the counts for each bin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_abb7fbb2fcbfb82dd8030122692dbcbd1}\label{classHistogramData_abb7fbb2fcbfb82dd8030122692dbcbd1}} 
+int \hyperlink{classHistogramData_abb7fbb2fcbfb82dd8030122692dbcbd1}{m\+Index}
+\begin{DoxyCompactList}\small\item\em index of the first/last element of the ring buffer m\+Histogram \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_a7ad41d77119ca0442b8c31f7f8122a8b}\label{classHistogramData_a7ad41d77119ca0442b8c31f7f8122a8b}} 
+unsigned short $\ast$ \hyperlink{classHistogramData_a7ad41d77119ca0442b8c31f7f8122a8b}{m\+Histogram}
+\begin{DoxyCompactList}\small\item\em ring buffer to realize the F\+I\+FO buffer \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramData_ac4405af2986dc6b78d684fd2a827d280}\label{classHistogramData_ac4405af2986dc6b78d684fd2a827d280}} 
+bool \hyperlink{classHistogramData_ac4405af2986dc6b78d684fd2a827d280}{m\+Enabled}
+\begin{DoxyCompactList}\small\item\em state of the histogram \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The histogram data class stores the data of the histogram and provide methods to add data and retrieve histogram data. 
+
+The value (period) is not stored, instead it is directly assigned to a bin. The bin number is stored twice, once in a the ring buffer m\+Histogram and in the bin buffer m\+Bin\+Buffer. The ring buffer is used to track the order of the incomming elements. In this way the elements can be removed from the histogram in the same order they come in (F\+I\+FO). The m\+Bin\+Buffer is used to store the number of periods (count) that are element of the range regarding a histogram bin. This way a quick access to the counts per bin is possible.
+
+\begin{DoxyAuthor}{Author}
+Matthias Hund 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/20/21 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHistogramData_ab9313f2ca9852a85fd9f7da57c40f95b}\label{classHistogramData_ab9313f2ca9852a85fd9f7da57c40f95b}} 
+\index{Histogram\+Data@{Histogram\+Data}!Add@{Add}}
+\index{Add@{Add}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Histogram\+Data\+::\+Add (\begin{DoxyParamCaption}\item[{double}]{period }\end{DoxyParamCaption})}
+
+
+
+add the period and remove the oldest period from the histogram if enabled 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & period in seconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistogramData_ab3908c587c2e03741d4ca05f84fbc82f}\label{classHistogramData_ab3908c587c2e03741d4ca05f84fbc82f}} 
+\index{Histogram\+Data@{Histogram\+Data}!Enable@{Enable}}
+\index{Enable@{Enable}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily void Histogram\+Data\+::\+Enable (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+set the state of the histogram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & enables the histogram if true and disables the histogram if false \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistogramData_af38a5e6485965296d7c02f8f57a92bb5}\label{classHistogramData_af38a5e6485965296d7c02f8f57a92bb5}} 
+\index{Histogram\+Data@{Histogram\+Data}!Get\+Bin@{Get\+Bin}}
+\index{Get\+Bin@{Get\+Bin}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Get\+Bin()}{GetBin()}}
+{\footnotesize\ttfamily unsigned short Histogram\+Data\+::\+Get\+Bin (\begin{DoxyParamCaption}\item[{double}]{period }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+determines the bin number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & period in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the bin number the period belongs to. return zero if the period is out of the histogram range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHistogramData_a9ee374cc3bab303463c9a7788b7e7b6f}\label{classHistogramData_a9ee374cc3bab303463c9a7788b7e7b6f}} 
+\index{Histogram\+Data@{Histogram\+Data}!Get\+Bins@{Get\+Bins}}
+\index{Get\+Bins@{Get\+Bins}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Get\+Bins()}{GetBins()}}
+{\footnotesize\ttfamily unsigned short Histogram\+Data\+::\+Get\+Bins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+number of histogram bins 
+
+\begin{DoxyReturn}{Returns}
+number of bins 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHistogramData_a49e967388837f909afb328f9e55da205}\label{classHistogramData_a49e967388837f909afb328f9e55da205}} 
+\index{Histogram\+Data@{Histogram\+Data}!Get\+Hist\+Bin\+Count@{Get\+Hist\+Bin\+Count}}
+\index{Get\+Hist\+Bin\+Count@{Get\+Hist\+Bin\+Count}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Get\+Hist\+Bin\+Count()}{GetHistBinCount()}}
+{\footnotesize\ttfamily unsigned short Histogram\+Data\+::\+Get\+Hist\+Bin\+Count (\begin{DoxyParamCaption}\item[{unsigned short}]{bin }\end{DoxyParamCaption})}
+
+
+
+to get the counts in a bin 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bin} & the number of the bin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the counts of the histogram bin or zero if the histogram is disabled or the bin number is invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHistogramData_a9f1db31342e0a70473c2ab61cc0e0f22}\label{classHistogramData_a9f1db31342e0a70473c2ab61cc0e0f22}} 
+\index{Histogram\+Data@{Histogram\+Data}!Get\+Max\+Period@{Get\+Max\+Period}}
+\index{Get\+Max\+Period@{Get\+Max\+Period}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Get\+Max\+Period()}{GetMaxPeriod()}}
+{\footnotesize\ttfamily double Histogram\+Data\+::\+Get\+Max\+Period (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+maximal period that is still displayed in the histogram 
+
+\begin{DoxyReturn}{Returns}
+period in seconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHistogramData_ae0639913744c2edaa4d688b22a753b6e}\label{classHistogramData_ae0639913744c2edaa4d688b22a753b6e}} 
+\index{Histogram\+Data@{Histogram\+Data}!Is\+Enabled@{Is\+Enabled}}
+\index{Is\+Enabled@{Is\+Enabled}!Histogram\+Data@{Histogram\+Data}}
+\subsubsection{\texorpdfstring{Is\+Enabled()}{IsEnabled()}}
+{\footnotesize\ttfamily bool Histogram\+Data\+::\+Is\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+return the state of the histogram 
+
+\begin{DoxyReturn}{Returns}
+true if the histogram is enabled, otherwise false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HistogramData_8h}{Histogram\+Data.\+h}\item 
+Histogram\+Data.\+cpp\end{DoxyCompactItemize}

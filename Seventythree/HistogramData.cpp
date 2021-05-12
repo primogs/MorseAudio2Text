@@ -133,6 +133,10 @@ unsigned short HistogramData::GetBins()
 	return mBins;
 }
 
+/**
+ * @brief maximal period that is still displayed in the histogram
+ * @return period in seconds
+ */
 double	HistogramData::GetMaxPeriod()
 {
 	return mMaxPeriod;

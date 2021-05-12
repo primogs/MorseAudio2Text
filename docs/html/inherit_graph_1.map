@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classConfigFile.html" title="ConfigFile" alt="" coords="147,5,229,32"/>
+<area shape="rect" id="node2" href="$classMainDialog.html" title="MainDialog" alt="" coords="311,31,397,57"/>
+<area shape="rect" id="node4" href="$classHistogram.html" title="Class Histogram. " alt="" coords="147,107,229,133"/>
+<area shape="rect" id="node6" href="$classMainDialogBase.html" title="Class MainDialogBase. " alt="" coords="129,56,247,83"/>
+<area shape="rect" id="node5" href="$classHistogramDialog.html" title="Window of a dialog that shows the histogram. " alt="" coords="295,107,413,133"/>
+</map>

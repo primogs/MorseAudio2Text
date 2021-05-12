@@ -1,0 +1,181 @@
+\hypertarget{classHistogramPanel}{}\section{Histogram\+Panel Class Reference}
+\label{classHistogramPanel}\index{Histogram\+Panel@{Histogram\+Panel}}
+
+
+Customized wx\+Panel to display the histogram.  
+
+
+
+
+{\ttfamily \#include $<$Histogram\+Panel.\+h$>$}
+
+
+
+Inheritance diagram for Histogram\+Panel\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classHistogramPanel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Histogram\+Panel\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classHistogramPanel__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramPanel_afae620a0f5e69c71de57c8d9610fb911}\label{classHistogramPanel_afae620a0f5e69c71de57c8d9610fb911}} 
+\hyperlink{classHistogramPanel_afae620a0f5e69c71de57c8d9610fb911}{Histogram\+Panel} (wx\+Window $\ast$parent)
+\begin{DoxyCompactList}\small\item\em constructor of the histogram panel. Connect the paint event with the method On\+Paint\+Histogram\+Panel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_a7f1668e529cbdc1851722e0d4cb7f37c}\label{classHistogramPanel_a7f1668e529cbdc1851722e0d4cb7f37c}} 
+\hyperlink{classHistogramPanel_a7f1668e529cbdc1851722e0d4cb7f37c}{Histogram\+Panel} (wx\+Window $\ast$parent, wx\+Window\+ID winid=wx\+I\+D\+\_\+\+A\+NY, const wx\+Point \&pos=wx\+Default\+Position, const wx\+Size \&size=wx\+Default\+Size, long style=wx\+T\+A\+B\+\_\+\+T\+R\+A\+V\+E\+R\+S\+AL$\vert$wx\+N\+O\+\_\+\+B\+O\+R\+D\+ER, const wx\+String \&name=wx\+Panel\+Name\+Str)
+\begin{DoxyCompactList}\small\item\em constructor of the histogram panel. Connect the paint event with the method On\+Paint\+Histogram\+Panel \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_a24da6285c42aa63d9ab5dace94495133}\label{classHistogramPanel_a24da6285c42aa63d9ab5dace94495133}} 
+virtual \hyperlink{classHistogramPanel_a24da6285c42aa63d9ab5dace94495133}{$\sim$\+Histogram\+Panel} ()
+\begin{DoxyCompactList}\small\item\em destructor of the histogram panel. Disconnect the paint event with the method On\+Paint\+Histogram\+Panel \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramPanel_a3fd17f66a3e7dbd529f417326c257bce}{Render} (wx\+DC \&dc)
+\begin{DoxyCompactList}\small\item\em will paint the histogram \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramPanel_aed5b0e0dadd258cc29cd6a6d5dfed0e8}{On\+Paint\+Histogram\+Panel} (wx\+Paint\+Event \&event)
+\begin{DoxyCompactList}\small\item\em called on a paint event \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramPanel_aa72fe9e982dd595e60d7ffde9799a458}\label{classHistogramPanel_aa72fe9e982dd595e60d7ffde9799a458}} 
+void \hyperlink{classHistogramPanel_aa72fe9e982dd595e60d7ffde9799a458}{Free\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em free the allocated memory \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramPanel_ac9dfa965b82be4b009d95eddb9b15417}{Resize\+Buffer} (unsigned short elements)
+\begin{DoxyCompactList}\small\item\em reallocate the memory \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_ae88368b1856f4a81b33017842c5eed01}\label{classHistogramPanel_ae88368b1856f4a81b33017842c5eed01}} 
+void \hyperlink{classHistogramPanel_ae88368b1856f4a81b33017842c5eed01}{Update} ()
+\begin{DoxyCompactList}\small\item\em tries to get newest histogram data from the gloabal morse statistic class and stores it in local member variables \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramPanel_a4ae2b45e5450426cdcd47d1be81da36f}{Draw\+Axis} (wx\+DC \&dc, wx\+Rect \&rect)
+\begin{DoxyCompactList}\small\item\em draw the x-\/axis on the bottom of the panel \end{DoxyCompactList}\item 
+void \hyperlink{classHistogramPanel_ae17ba2aae2b01ddaeb158dd168829e7d}{Draw\+Bins} (wx\+DC \&dc, wx\+Rect \&rect, const int width, const int bottom)
+\begin{DoxyCompactList}\small\item\em will paint the histogram \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHistogramPanel_afded835e5e02c8216ab3353e0f4ac460}\label{classHistogramPanel_afded835e5e02c8216ab3353e0f4ac460}} 
+unsigned short $\ast$ \hyperlink{classHistogramPanel_afded835e5e02c8216ab3353e0f4ac460}{m\+Tone\+Counts}
+\begin{DoxyCompactList}\small\item\em local copy of the tone histogram \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_a5c3692f97de5cbab8325b3523f21650c}\label{classHistogramPanel_a5c3692f97de5cbab8325b3523f21650c}} 
+unsigned short $\ast$ \hyperlink{classHistogramPanel_a5c3692f97de5cbab8325b3523f21650c}{m\+Pause\+Counts}
+\begin{DoxyCompactList}\small\item\em local copy of the pause histogram \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_a56b8a27464d6455cfbae9ae56c5cbe94}\label{classHistogramPanel_a56b8a27464d6455cfbae9ae56c5cbe94}} 
+unsigned short \hyperlink{classHistogramPanel_a56b8a27464d6455cfbae9ae56c5cbe94}{m\+Bins}
+\begin{DoxyCompactList}\small\item\em number of bins \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_a2f3140c84d15627c9df2f0cd9506233a}\label{classHistogramPanel_a2f3140c84d15627c9df2f0cd9506233a}} 
+double \hyperlink{classHistogramPanel_a2f3140c84d15627c9df2f0cd9506233a}{m\+Max\+Period}
+\begin{DoxyCompactList}\small\item\em largest period that still is considered in the histogram \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHistogramPanel_a96f1b45929d56ead29f52d738fbfb107}\label{classHistogramPanel_a96f1b45929d56ead29f52d738fbfb107}} 
+unsigned short \hyperlink{classHistogramPanel_a96f1b45929d56ead29f52d738fbfb107}{m\+Max\+Count}
+\begin{DoxyCompactList}\small\item\em maximum value of tone and paus histogram used for normalization.\+Is at least one to avoid division by zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Customized wx\+Panel to display the histogram. 
+
+\begin{DoxyAuthor}{Author}
+Matthias Hund 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+02/20/21 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classHistogramPanel_a4ae2b45e5450426cdcd47d1be81da36f}\label{classHistogramPanel_a4ae2b45e5450426cdcd47d1be81da36f}} 
+\index{Histogram\+Panel@{Histogram\+Panel}!Draw\+Axis@{Draw\+Axis}}
+\index{Draw\+Axis@{Draw\+Axis}!Histogram\+Panel@{Histogram\+Panel}}
+\subsubsection{\texorpdfstring{Draw\+Axis()}{DrawAxis()}}
+{\footnotesize\ttfamily void Histogram\+Panel\+::\+Draw\+Axis (\begin{DoxyParamCaption}\item[{wx\+DC \&}]{dc,  }\item[{wx\+Rect \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+draw the x-\/axis on the bottom of the panel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & device context of the panel to be painted \\
+\hline
+{\em rect} & boarder coordinates of the panel \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistogramPanel_ae17ba2aae2b01ddaeb158dd168829e7d}\label{classHistogramPanel_ae17ba2aae2b01ddaeb158dd168829e7d}} 
+\index{Histogram\+Panel@{Histogram\+Panel}!Draw\+Bins@{Draw\+Bins}}
+\index{Draw\+Bins@{Draw\+Bins}!Histogram\+Panel@{Histogram\+Panel}}
+\subsubsection{\texorpdfstring{Draw\+Bins()}{DrawBins()}}
+{\footnotesize\ttfamily void Histogram\+Panel\+::\+Draw\+Bins (\begin{DoxyParamCaption}\item[{wx\+DC \&}]{dc,  }\item[{wx\+Rect \&}]{rect,  }\item[{const int}]{width,  }\item[{const int}]{bottom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+will paint the histogram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & device context of the panel to be painted \\
+\hline
+{\em rect} & boarder coordinates of the panel \\
+\hline
+{\em width} & with of one bin in pixel \\
+\hline
+{\em bottom} & pixel position of the lower bin boundary \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistogramPanel_aed5b0e0dadd258cc29cd6a6d5dfed0e8}\label{classHistogramPanel_aed5b0e0dadd258cc29cd6a6d5dfed0e8}} 
+\index{Histogram\+Panel@{Histogram\+Panel}!On\+Paint\+Histogram\+Panel@{On\+Paint\+Histogram\+Panel}}
+\index{On\+Paint\+Histogram\+Panel@{On\+Paint\+Histogram\+Panel}!Histogram\+Panel@{Histogram\+Panel}}
+\subsubsection{\texorpdfstring{On\+Paint\+Histogram\+Panel()}{OnPaintHistogramPanel()}}
+{\footnotesize\ttfamily void Histogram\+Panel\+::\+On\+Paint\+Histogram\+Panel (\begin{DoxyParamCaption}\item[{wx\+Paint\+Event \&}]{event }\end{DoxyParamCaption})}
+
+
+
+called on a paint event 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & the wx\+Paint\+Event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistogramPanel_a3fd17f66a3e7dbd529f417326c257bce}\label{classHistogramPanel_a3fd17f66a3e7dbd529f417326c257bce}} 
+\index{Histogram\+Panel@{Histogram\+Panel}!Render@{Render}}
+\index{Render@{Render}!Histogram\+Panel@{Histogram\+Panel}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Histogram\+Panel\+::\+Render (\begin{DoxyParamCaption}\item[{wx\+DC \&}]{dc }\end{DoxyParamCaption})}
+
+
+
+will paint the histogram 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dc} & device context of the panel to be painted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistogramPanel_ac9dfa965b82be4b009d95eddb9b15417}\label{classHistogramPanel_ac9dfa965b82be4b009d95eddb9b15417}} 
+\index{Histogram\+Panel@{Histogram\+Panel}!Resize\+Buffer@{Resize\+Buffer}}
+\index{Resize\+Buffer@{Resize\+Buffer}!Histogram\+Panel@{Histogram\+Panel}}
+\subsubsection{\texorpdfstring{Resize\+Buffer()}{ResizeBuffer()}}
+{\footnotesize\ttfamily void Histogram\+Panel\+::\+Resize\+Buffer (\begin{DoxyParamCaption}\item[{unsigned short}]{elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+reallocate the memory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elements} & number of elements memory is allocated for \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HistogramPanel_8h}{Histogram\+Panel.\+h}\item 
+Histogram\+Panel.\+cpp\end{DoxyCompactItemize}
