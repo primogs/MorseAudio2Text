@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 //    This file is part of Seventythree.
 //
-//    Copyright (C) 2020 Matthias Hund
+//    Copyright (C) 2020 - 2021 Matthias Hund
 //    
 //    This program is free software; you can redistribute it and/or
 //    modify it under the terms of the GNU General Public License

@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 //    This file is part of Seventythree.
 //
-//    Copyright (C) 2020 Matthias Hund
+//    Copyright (C) 2020 - 2021 Matthias Hund
 //    
 //    This program is free software; you can redistribute it and/or
 //    modify it under the terms of the GNU General Public License
@@ -139,7 +139,7 @@ void MorseDecode::Reset()
 	SetAveTimeBufferLength(16);
 	SetShortTimeBufferLength(8);
 	SetStableDotTimeBufferLength(16);
-	SetDotTimeLowerLimit(0.0134); 		// ~ 90 WPM
+	SetDotTimeLowerLimit(0.03); 		// ~ 40 WPM
 	SetDotTimeUpperLimit(1.0);
 	SetStableDotTimeInaccuracy(0.2); 	// 20 %
 	SetEdgeEventBufferLength(32);
@@ -491,11 +491,16 @@ bool MorseDecode::IsDotTimeStable(double dotTime)
  * @return a morse sign if detected and NO_SIGN otherwise
  */
 MorseSign MorseDecode::EdgeEvent(EdgeState edge,double period)
-{	
+{
 	if(edge != NONE)
 	{
-		double dotTime        = DetectDotTime(period);
-		mEdgeEventDotTimeValid = IsDotTimeStable(dotTime);
+		MorseStatistic::AddPeriodToHistogram(period,edge);
+		
+		//if(edge == FALLING)	// use only dit and da's no pauses
+		{
+			double dotTime        = DetectDotTime(period);
+			mEdgeEventDotTimeValid = IsDotTimeStable(dotTime);
+		}
 		
 		mEdgeEventPeriodBuffer[mEdgeEventIdxFill]=period;
 		mEdgeEventStateBuffer[mEdgeEventIdxFill]=edge;
@@ -671,10 +676,10 @@ const char* MorseDecode::GetCharacter(MorseSign sign)
 		case SPACE_WORD:
 		{
 			res = DecodeCharacter(mGetCharBuffer,mGetCharBufferIndex);
-			uint32_t charLength = strlen(res);
+			size_t charLength = strlen(res);
 			if(charLength>2)
 				charLength = 2;
-			strncpy(mGetCharStr,res,charLength);
+			memcpy(mGetCharStr,res,charLength);
 			mGetCharStr[charLength] = ' ';				// append space to the character
 			mGetCharStr[charLength+1] = '\0';
 			res = mGetCharStr;
@@ -722,7 +727,7 @@ void MorseDecode::AppendToTxtBuffer(const char * character)
 		int length = strlen(character);
 		if(mTextBufferLength-mTextBufferIndex >= length)
 		{
-			strncpy(&mTextBuffer[mTextBufferIndex],character,length);
+			memcpy(&mTextBuffer[mTextBufferIndex],character,length);
 			mTextBufferIndex += length;
 		}
 	}

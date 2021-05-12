@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 //    This file is part of Seventythree.
 //
-//    Copyright (C) 2020 Matthias Hund
+//    Copyright (C) 2020 - 2021 Matthias Hund
 //    
 //    This program is free software; you can redistribute it and/or
 //    modify it under the terms of the GNU General Public License
@@ -25,7 +25,7 @@
  * @brief constructor of the main dialog. Does some setups.
  * @param parent
  */
-MainDialog::MainDialog( wxWindow* parent ) : MainDialogBase( parent )
+MainDialog::MainDialog( wxWindow* parent ) : MainDialogBase( parent ), mFlushTimeout(2)
 {
 	wxSize minSize = this->GetSize();	// window should be at least so big that all widgets fit in
 #ifdef __WINDOWS__
@@ -244,14 +244,19 @@ void MainDialog::onTimerOut( wxTimerEvent& event )
 		if(strlen(txt) > 0)
 		{
 			m_textCtrlOutput->AppendText(txt);
-			mTimerNoReceive = timer + 5;
+			mTimerNoReceive = timer + mFlushTimeout;
 		}
 		if(mAddNewLine==1)
 		{
 			m_textCtrlOutput->AppendText("\n");
 		}
-		
 	}
+}
+
+void MainDialog::OnShowHistogram( wxCommandEvent& event )
+{
+	HistogramDialog dialog(this,wxID_ANY);
+	dialog.ShowModal();
 }
 
 /**
@@ -288,4 +293,9 @@ void MainDialog::onGainScroll( wxScrollEvent& event )
 		Global::mMD.SetMaxAmplitude(gain);
 		Global::mMDMutex.unlock();
 	}
+}
+
+void MainDialog::OnClose( wxCommandEvent& event )
+{
+	Close();
 }

@@ -1,1 +1,1 @@
-./Debug/MainCmdLine.cpp.o ./Debug/MorseDecode.cpp.o ./Debug/MorseStatistic.cpp.o
+./Debug/HistogramData.cpp.o ./Debug/MorseStatistic.cpp.o ./Debug/MainCmdLine.cpp.o ./Debug/MorseDecode.cpp.o

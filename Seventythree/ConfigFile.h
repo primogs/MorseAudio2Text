@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 //    This file is part of Seventythree.
 //
-//    Copyright (C) 2020 Matthias Hund
+//    Copyright (C) 2020 - 2021 Matthias Hund
 //    
 //    This program is free software; you can redistribute it and/or
 //    modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@
  * @author Matthias Hund
  * @date 06/06/20
  * @file ConfigFile.h
- * @brief Reads configuration from a file. Each line of the file should consist a empty, a comment or ar parameter name/value pair. 
+ * @brief Reads configuration from a file. Each line of the file should be empty, a comment or ar parameter name/value pair. 
  */
 class ConfigFile
 {

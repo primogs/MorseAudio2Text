@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 //    This file is part of Seventythree.
 //
-//    Copyright (C) 2020 Matthias Hund
+//    Copyright (C) 2020 - 2021 Matthias Hund
 //    
 //    This program is free software; you can redistribute it and/or
 //    modify it under the terms of the GNU General Public License
@@ -18,7 +18,7 @@
 //    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /////////////////////////////////////////////////////////////////////////////////////////
 #include "MorseStatistic.h"
-
+#include <iostream>
 using namespace Morse;
 
 /**
@@ -29,6 +29,8 @@ MorseStatistic::MorseStatistic()
 {
 	InitBuffer(100);
 	mEdgeEventBufferFullCounter = 0;
+	mHistTone.Enable(true);
+	mHistPause.Enable(false);
 }
 
 /**
@@ -47,6 +49,7 @@ void MorseStatistic::DeleteBuffer()
 {
 	delete[] mMorseSignBuffer;
 	delete[] mMorseTimeBuffer;
+
 	mMorseSignBuffer = nullptr;
 	mMorseTimeBuffer = nullptr;
 }
@@ -62,7 +65,7 @@ void MorseStatistic::InitBuffer(int bufferSize)
 	
 	mMorseSignBuffer = new MorseSign[mBufferSize];
 	mMorseTimeBuffer = new double[mBufferSize];
-	
+
 	for(int i=0;i<mBufferSize;i++)
 	{
 		mMorseSignBuffer[i] = NO_SIGN;
@@ -173,4 +176,98 @@ void MorseStatistic::StatEdgeEventBufferFull()
 int	MorseStatistic::StatEdgeEventBufferFullCounter()
 {
 	return mEdgeEventBufferFullCounter;
+}
+
+/**
+ * @brief add period to the tone/pause length histogram
+ * @param period: period of the tone or pause in seconds
+ * @param state: FALLING if period belongs to a tone or RISING if period belongs to a pause
+ */
+void MorseStatistic::AddPeriodToHistogram(double period,EdgeState state)
+{
+	if(state==FALLING)
+	{
+		mHistTone.Add(period);
+	}
+	else if(state ==RISING)
+	{
+		mHistPause.Add(period);
+	}
+}
+
+/**
+ * @brief switch evaluation of tone period on/off
+ * @param care: if true all periods that belong to a tone are evaluated in the histogram, otherwise periods are filtered out
+ */
+void MorseStatistic::EvaluateToneInHistogram(bool care)
+{
+	mHistTone.Enable(care);
+	
+}
+/**
+ * @brief switch evaluation of pause period on/off
+ * @param care: if true all periods that belong to a pause are evaluated in the histogram, otherwise periods are filtered out
+ */
+void MorseStatistic::EvaluatePauseInHistogram(bool care)
+{
+	mHistPause.Enable(care); 
+}
+
+/**
+ * @return return true if periods of tones are evaluated in the histogram, otherwise the function return false
+ */
+bool MorseStatistic::IsToneEvaluatedInHistogram()
+{
+	return mHistTone.IsEnabled();
+	
+}
+
+/**
+ * @return return true if periods of pauses are evaluated in the histogram, otherwise the function return false
+ */
+bool MorseStatistic::IsPauseEvaluatedInHistogram()
+{
+	return mHistPause.IsEnabled(); 
+}
+
+/**
+ * @brief count the periods that belongs to tones and in a histogram bin. 
+ * @param bin: number of the histogram bin
+ * @return return the number of periods that are element of the range regarding to the historam bin
+ */
+unsigned short MorseStatistic::GetHistToneBinCount(unsigned short bin)
+{
+	return mHistTone.GetHistBinCount(bin);
+}
+
+/**
+ * @brief count the periods that belongs to pause and in a histogram bin. 
+ * @param bin: number of the histogram bin
+ * @return return the number of periods that are element of the range regarding to the historam bin
+ */
+unsigned short MorseStatistic::GetHistPauseBinCount(unsigned short bin)
+{
+	return mHistPause.GetHistBinCount(bin);
+}
+
+/**
+ * @brief return the number of histogram bins 
+ * @return return the number of bins
+ */
+unsigned short MorseStatistic::GetNumberOfBins()
+{
+	const unsigned short binsTone = mHistTone.GetBins();
+	const unsigned short binsPause = mHistPause.GetBins();
+	if(binsTone>binsPause)
+		return binsTone;
+	return binsPause;
+}
+
+double MorseStatistic::GetMaxPeriod()
+{
+	const double periodTone = mHistTone.GetMaxPeriod();
+	const double periodPause = mHistPause.GetMaxPeriod();
+	if(periodTone>periodPause)
+		return periodTone;
+	return periodPause;
 }

@@ -1,16 +1,16 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Jul 11 2018)
+// C++ code generated with wxFormBuilder (version 3.9.0 Aug  6 2020)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef __MORSEGUI_H__
-#define __MORSEGUI_H__
+#pragma once
 
 #include <wx/artprov.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/intl.h>
+#include "HistogramPanel.h"
 #include <wx/string.h>
 #include <wx/stattext.h>
 #include <wx/gdicmn.h>
@@ -19,16 +19,19 @@
 #include <wx/settings.h>
 #include <wx/gauge.h>
 #include <wx/textctrl.h>
+#include <wx/button.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
 #include <wx/icon.h>
-#include <wx/button.h>
 #include <wx/sizer.h>
 #include <wx/statline.h>
 #include <wx/slider.h>
 #include <wx/choice.h>
 #include <wx/timer.h>
 #include <wx/dialog.h>
+#include <wx/panel.h>
+#include <wx/checkbox.h>
+#include <wx/tglbtn.h>
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -38,10 +41,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Class MainDialogBase
 ///////////////////////////////////////////////////////////////////////////////
-class MainDialogBase : public wxDialog 
+class MainDialogBase : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxStaticText* m_staticText9;
@@ -72,6 +75,7 @@ class MainDialogBase : public wxDialog
 		wxTextCtrl* m_textCtrlStatDot;
 		wxStaticText* m_staticText12;
 		wxTextCtrl* m_textCtrlStatDash;
+		wxButton* m_buttonShowHist;
 		wxStaticText* m_staticText11;
 		wxTextCtrl* m_textCtrlStatSpace;
 		wxStaticText* m_staticText13;
@@ -80,24 +84,55 @@ class MainDialogBase : public wxDialog
 		wxTextCtrl* m_textCtrlStatWordSpace;
 		wxStaticLine* m_staticline3;
 		wxTextCtrl* m_textCtrlOutput;
+		wxButton* m_buttonClose;
 		wxTimer m_timerOut;
 		wxTimer m_timerStat;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnCloseDialog( wxCloseEvent& event ) { event.Skip(); }
 		virtual void onClearOutputTxt( wxCommandEvent& event ) { event.Skip(); }
 		virtual void onGainScroll( wxScrollEvent& event ) { event.Skip(); }
 		virtual void onButtonStop( wxCommandEvent& event ) { event.Skip(); }
 		virtual void onButtonStart( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnShowHistogram( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnClose( wxCommandEvent& event ) { event.Skip(); }
 		virtual void onTimerOut( wxTimerEvent& event ) { event.Skip(); }
 		virtual void onTimerStat( wxTimerEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		MainDialogBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Seventythree"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 663,458 ), long style = wxCLOSE_BOX|wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		MainDialogBase( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Seventythree"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 663,480 ), long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_DIALOG_STYLE|wxMINIMIZE_BOX );
 		~MainDialogBase();
-	
+
 };
 
-#endif //__MORSEGUI_H__
+///////////////////////////////////////////////////////////////////////////////
+/// Class Histogram
+///////////////////////////////////////////////////////////////////////////////
+class Histogram : public wxDialog
+{
+	private:
+
+	protected:
+		HistogramPanel* m_panelHist;
+		wxCheckBox* m_cbTone;
+		wxCheckBox* m_cbPause;
+		wxToggleButton* m_toggleBtnClose;
+		wxTimer m_timerHistogram;
+
+		// Virtual event handlers, overide them in your derived class
+		virtual void OnPaintChartPanel( wxPaintEvent& event ) { event.Skip(); }
+		virtual void OnCbTone( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnCbPause( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnCloseDialog( wxCommandEvent& event ) { event.Skip(); }
+		virtual void OnHistogramTimer( wxTimerEvent& event ) { event.Skip(); }
+
+
+	public:
+
+		Histogram( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxEmptyString, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxCAPTION|wxCLOSE_BOX|wxDEFAULT_DIALOG_STYLE|wxMINIMIZE_BOX );
+		~Histogram();
+
+};
+

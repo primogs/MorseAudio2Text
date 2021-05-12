@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 //    This file is part of Seventythree.
 //
-//    Copyright (C) 2020 Matthias Hund
+//    Copyright (C) 2020 - 2021 Matthias Hund
 //    
 //    This program is free software; you can redistribute it and/or
 //    modify it under the terms of the GNU General Public License
@@ -22,6 +22,7 @@
 
 #include <cmath>
 #include "MorseDataTypes.h"
+#include "HistogramData.h"
 
 //!  The morse statistic class collects data from the decode process.
 /**
@@ -42,18 +43,32 @@ public:
 	double 	StatGetStdDevOfTime(Morse::MorseSign sign);
 	int		StatGetCount(Morse::MorseSign sign);
 	int		StatEdgeEventBufferFullCounter();
+	void 	AddPeriodToHistogram(double period,Morse::EdgeState state);
+	void	EvaluateToneInHistogram(bool care);
+	void	EvaluatePauseInHistogram(bool care);
+	bool 	IsToneEvaluatedInHistogram();
+	bool 	IsPauseEvaluatedInHistogram();
+
+	unsigned short GetNumberOfBins();
+	double 		   GetMaxPeriod();
+	unsigned short GetHistToneBinCount(unsigned short bin);
+	unsigned short GetHistPauseBinCount(unsigned short bin);
+	
 protected:
 	void 	StatAddSample(Morse::MorseSign sign,double dt);
 	void	StatEdgeEventBufferFull();
 private:
 	void 	DeleteBuffer();
 	void 	InitBuffer(int bufferSize);
+	
 
 	Morse::MorseSign 	* 	mMorseSignBuffer;				//!< buffer to store last morse signs
 	double 				* 	mMorseTimeBuffer;				//!< buffer to store duration of the morse signs
 	int						mBufferSize;					//!< size of the buffers
 	int						mBufferIndex;					//!< index of the buffer element that will be written next
 	int						mEdgeEventBufferFullCounter;	//!< counts how often the edge event buffer overflowed
+	HistogramData			mHistTone;						//!< instance of the histogram data class containing the tone histogram
+	HistogramData			mHistPause;						//!< instance of the histogram data class containing the pause histogram
 };
 
 #endif // MORSESTATISTIC_H

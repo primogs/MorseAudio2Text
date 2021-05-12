@@ -1,1 +1,1 @@
-./Debug/MainDialog.cpp.o ./Debug/ConfigFile.cpp.o ./Debug/MorseDecode.cpp.o ./Debug/MorseStatistic.cpp.o ./Debug/Main.cpp.o ./Debug/MorseGUI.cpp.o ./Debug/Global.cpp.o ./Debug/Audio.cpp.o
+./Debug/MorseDecode.cpp.o ./Debug/ConfigFile.cpp.o ./Debug/HistogramData.cpp.o ./Debug/HistogramDialog.cpp.o ./Debug/MorseStatistic.cpp.o ./Debug/HistogramPanel.cpp.o ./Debug/Main.cpp.o ./Debug/MorseGUI.cpp.o ./Debug/Global.cpp.o ./Debug/MainDialog.cpp.o ./Debug/Audio.cpp.o

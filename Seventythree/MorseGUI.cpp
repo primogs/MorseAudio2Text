@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Jul 11 2018)
+// C++ code generated with wxFormBuilder (version 3.9.0 Aug  6 2020)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
@@ -12,221 +12,230 @@
 MainDialogBase::MainDialogBase( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( -1,-1 ), wxDefaultSize );
-	
+
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxBoxSizer* bSizer3;
 	bSizer3 = new wxBoxSizer( wxHORIZONTAL );
-	
+
 	wxFlexGridSizer* fgSizer1;
 	fgSizer1 = new wxFlexGridSizer( 0, 5, 0, 0 );
 	fgSizer1->SetFlexibleDirection( wxBOTH );
 	fgSizer1->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_NONE );
-	
+
 	m_staticText1 = new wxStaticText( this, wxID_ANY, _("Output"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( -1 );
 	m_staticText1->SetFont( wxFont( 16, wxFONTFAMILY_DECORATIVE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
-	
+
 	fgSizer1->Add( m_staticText1, 0, wxALL, 5 );
-	
-	
+
+
 	fgSizer1->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_staticText9 = new wxStaticText( this, wxID_ANY, _("buffer"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText9->Wrap( -1 );
 	fgSizer1->Add( m_staticText9, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_gaugeBufferLevel = new wxGauge( this, wxID_ANY, 32, wxDefaultPosition, wxDefaultSize, wxGA_HORIZONTAL );
-	m_gaugeBufferLevel->SetValue( 0 ); 
+	m_gaugeBufferLevel->SetValue( 0 );
 	fgSizer1->Add( m_gaugeBufferLevel, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
-	
-	
+
+
 	fgSizer1->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_staticTextStatus = new wxStaticText( this, wxID_ANY, _("envelope"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextStatus->Wrap( -1 );
 	fgSizer1->Add( m_staticTextStatus, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_gaugeEnvelope = new wxGauge( this, wxID_ANY, 128, wxDefaultPosition, wxDefaultSize, wxGA_HORIZONTAL );
-	m_gaugeEnvelope->SetValue( 0 ); 
+	m_gaugeEnvelope->SetValue( 0 );
 	fgSizer1->Add( m_gaugeEnvelope, 0, wxALIGN_CENTER|wxALL, 5 );
-	
+
 	m_staticText5 = new wxStaticText( this, wxID_ANY, _("intervall"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText5->Wrap( -1 );
 	fgSizer1->Add( m_staticText5, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlIntervall = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer1->Add( m_textCtrlIntervall, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
-	
-	
+
+
 	fgSizer1->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_staticText4 = new wxStaticText( this, wxID_ANY, _("threshold"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText4->Wrap( -1 );
 	fgSizer1->Add( m_staticText4, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_gaugeThreshold = new wxGauge( this, wxID_ANY, 128, wxDefaultPosition, wxDefaultSize, wxGA_HORIZONTAL );
-	m_gaugeThreshold->SetValue( 0 ); 
+	m_gaugeThreshold->SetValue( 0 );
 	fgSizer1->Add( m_gaugeThreshold, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
-	
+
 	m_staticText81 = new wxStaticText( this, wxID_ANY, _("dot time"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText81->Wrap( -1 );
 	fgSizer1->Add( m_staticText81, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlSpeed = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer1->Add( m_textCtrlSpeed, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
+
+
 	fgSizer1->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_staticText6 = new wxStaticText( this, wxID_ANY, _("sign"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText6->Wrap( -1 );
 	fgSizer1->Add( m_staticText6, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlSign = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer1->Add( m_textCtrlSign, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_staticText15 = new wxStaticText( this, wxID_ANY, _("WPM"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText15->Wrap( -1 );
 	fgSizer1->Add( m_staticText15, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlWPM = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer1->Add( m_textCtrlWPM, 0, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_buttonClear = new wxButton( this, wxID_ANY, _("clear"), wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer1->Add( m_buttonClear, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
-	
-	
+
+
 	bSizer3->Add( fgSizer1, 0, wxEXPAND|wxSHAPED, 5 );
-	
+
 	m_staticline2 = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_VERTICAL );
 	bSizer3->Add( m_staticline2, 0, wxEXPAND | wxALL, 5 );
-	
+
 	wxBoxSizer* bSizer31;
 	bSizer31 = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_staticText2 = new wxStaticText( this, wxID_ANY, _("Input"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText2->Wrap( -1 );
 	m_staticText2->SetFont( wxFont( 16, wxFONTFAMILY_DECORATIVE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
-	
+
 	bSizer31->Add( m_staticText2, 0, wxALL, 5 );
-	
-	
+
+
 	bSizer31->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_staticText16 = new wxStaticText( this, wxID_ANY, _("gain"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText16->Wrap( -1 );
 	bSizer31->Add( m_staticText16, 0, wxALL, 5 );
-	
+
 	m_sliderGain = new wxSlider( this, wxID_ANY, 0, 0, 100, wxDefaultPosition, wxDefaultSize, wxSL_HORIZONTAL );
 	bSizer31->Add( m_sliderGain, 0, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL, 5 );
-	
+
 	wxArrayString m_choiceInputChoices;
 	m_choiceInput = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_choiceInputChoices, 0 );
 	m_choiceInput->SetSelection( 0 );
 	m_choiceInput->SetMinSize( wxSize( 200,-1 ) );
-	
+
 	bSizer31->Add( m_choiceInput, 0, wxALL|wxALIGN_CENTER_VERTICAL|wxALIGN_CENTER_HORIZONTAL, 5 );
-	
+
 	wxBoxSizer* bSizer4;
 	bSizer4 = new wxBoxSizer( wxHORIZONTAL );
-	
+
 	m_buttonStop = new wxButton( this, wxID_ANY, _("stop"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer4->Add( m_buttonStop, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
+
+
 	bSizer4->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_buttonStart = new wxButton( this, wxID_ANY, _("start"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer4->Add( m_buttonStart, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
+
+
 	bSizer31->Add( bSizer4, 0, wxEXPAND, 5 );
-	
-	
+
+
 	bSizer3->Add( bSizer31, 0, wxEXPAND, 5 );
-	
-	
+
+
 	mainSizer->Add( bSizer3, 0, wxEXPAND, 5 );
-	
+
 	m_staticLine = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
 	mainSizer->Add( m_staticLine, 0, wxEXPAND | wxALL, 5 );
-	
+
 	wxFlexGridSizer* fgSizer3;
 	fgSizer3 = new wxFlexGridSizer( 0, 7, 0, 0 );
 	fgSizer3->SetFlexibleDirection( wxBOTH );
 	fgSizer3->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	m_staticText91 = new wxStaticText( this, wxID_ANY, _("Statistic"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText91->Wrap( -1 );
 	m_staticText91->SetFont( wxFont( 16, wxFONTFAMILY_DECORATIVE, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxEmptyString ) );
-	
+
 	fgSizer3->Add( m_staticText91, 0, wxALL, 5 );
-	
+
 	m_staticText10 = new wxStaticText( this, wxID_ANY, _("dot"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText10->Wrap( -1 );
 	fgSizer3->Add( m_staticText10, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlStatDot = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer3->Add( m_textCtrlStatDot, 0, wxALL, 5 );
-	
+
 	m_staticText12 = new wxStaticText( this, wxID_ANY, _("dash"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText12->Wrap( -1 );
 	fgSizer3->Add( m_staticText12, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlStatDash = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer3->Add( m_textCtrlStatDash, 0, wxALL, 5 );
-	
-	
+
+
 	fgSizer3->Add( 0, 0, 1, wxEXPAND, 5 );
-	
-	
+
+	m_buttonShowHist = new wxButton( this, wxID_ANY, _("show histogram"), wxDefaultPosition, wxDefaultSize, 0 );
+	fgSizer3->Add( m_buttonShowHist, 0, wxALL, 5 );
+
+
 	fgSizer3->Add( 0, 0, 1, wxEXPAND, 5 );
-	
-	
-	fgSizer3->Add( 0, 0, 1, wxEXPAND, 5 );
-	
+
 	m_staticText11 = new wxStaticText( this, wxID_ANY, _("space"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText11->Wrap( -1 );
 	fgSizer3->Add( m_staticText11, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlStatSpace = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer3->Add( m_textCtrlStatSpace, 0, wxALL, 5 );
-	
+
 	m_staticText13 = new wxStaticText( this, wxID_ANY, _("char. sp."), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13->Wrap( -1 );
 	fgSizer3->Add( m_staticText13, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlStatChSpace = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_READONLY );
 	fgSizer3->Add( m_textCtrlStatChSpace, 0, wxALL, 5 );
-	
+
 	m_staticText14 = new wxStaticText( this, wxID_ANY, _("word sp."), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText14->Wrap( -1 );
 	fgSizer3->Add( m_staticText14, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_textCtrlStatWordSpace = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
 	fgSizer3->Add( m_textCtrlStatWordSpace, 0, wxALL, 5 );
-	
-	
+
+
 	mainSizer->Add( fgSizer3, 0, wxEXPAND, 5 );
-	
+
 	m_staticline3 = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
 	mainSizer->Add( m_staticline3, 0, wxEXPAND | wxALL, 5 );
-	
+
 	m_textCtrlOutput = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE|wxTE_READONLY );
 	m_textCtrlOutput->SetMinSize( wxSize( -1,100 ) );
-	
+
 	mainSizer->Add( m_textCtrlOutput, 1, wxALL|wxEXPAND, 5 );
-	
-	
+
+	wxBoxSizer* bSizer7;
+	bSizer7 = new wxBoxSizer( wxVERTICAL );
+
+	m_buttonClose = new wxButton( this, wxID_ANY, _("close"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer7->Add( m_buttonClose, 0, wxALL|wxALIGN_RIGHT, 5 );
+
+
+	mainSizer->Add( bSizer7, 0, wxEXPAND, 5 );
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	m_timerOut.SetOwner( this, wxID_TIMER_OUT );
 	m_timerStat.SetOwner( this, wxID_TIMER_STAT );
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	this->Connect( wxEVT_CLOSE_WINDOW, wxCloseEventHandler( MainDialogBase::OnCloseDialog ) );
 	m_buttonClear->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::onClearOutputTxt ), NULL, this );
@@ -241,6 +250,8 @@ MainDialogBase::MainDialogBase( wxWindow* parent, wxWindowID id, const wxString&
 	m_sliderGain->Connect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( MainDialogBase::onGainScroll ), NULL, this );
 	m_buttonStop->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::onButtonStop ), NULL, this );
 	m_buttonStart->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::onButtonStart ), NULL, this );
+	m_buttonShowHist->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::OnShowHistogram ), NULL, this );
+	m_buttonClose->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::OnClose ), NULL, this );
 	this->Connect( wxID_TIMER_OUT, wxEVT_TIMER, wxTimerEventHandler( MainDialogBase::onTimerOut ) );
 	this->Connect( wxID_TIMER_STAT, wxEVT_TIMER, wxTimerEventHandler( MainDialogBase::onTimerStat ) );
 }
@@ -261,7 +272,79 @@ MainDialogBase::~MainDialogBase()
 	m_sliderGain->Disconnect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( MainDialogBase::onGainScroll ), NULL, this );
 	m_buttonStop->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::onButtonStop ), NULL, this );
 	m_buttonStart->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::onButtonStart ), NULL, this );
+	m_buttonShowHist->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::OnShowHistogram ), NULL, this );
+	m_buttonClose->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( MainDialogBase::OnClose ), NULL, this );
 	this->Disconnect( wxID_TIMER_OUT, wxEVT_TIMER, wxTimerEventHandler( MainDialogBase::onTimerOut ) );
 	this->Disconnect( wxID_TIMER_STAT, wxEVT_TIMER, wxTimerEventHandler( MainDialogBase::onTimerStat ) );
-	
+
+}
+
+Histogram::Histogram( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
+{
+	this->SetSizeHints( wxSize( 600,400 ), wxDefaultSize );
+
+	wxBoxSizer* bSizer15;
+	bSizer15 = new wxBoxSizer( wxVERTICAL );
+
+	wxBoxSizer* bSizer8;
+	bSizer8 = new wxBoxSizer( wxHORIZONTAL );
+
+	m_panelHist = new HistogramPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
+	bSizer8->Add( m_panelHist, 2, wxEXPAND | wxALL, 5 );
+
+	wxBoxSizer* bSizer9;
+	bSizer9 = new wxBoxSizer( wxVERTICAL );
+
+	m_cbTone = new wxCheckBox( this, wxID_ANY, _("tone"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_cbTone->SetValue(true);
+	bSizer9->Add( m_cbTone, 0, wxALL, 5 );
+
+	m_cbPause = new wxCheckBox( this, wxID_ANY, _("pause"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer9->Add( m_cbPause, 0, wxALL, 5 );
+
+
+	bSizer8->Add( bSizer9, 0, wxEXPAND, 5 );
+
+
+	bSizer15->Add( bSizer8, 1, wxEXPAND, 5 );
+
+	wxBoxSizer* bSizer12;
+	bSizer12 = new wxBoxSizer( wxHORIZONTAL );
+
+
+	bSizer12->Add( 0, 0, 1, wxEXPAND, 5 );
+
+	m_toggleBtnClose = new wxToggleButton( this, wxID_ANY, _("Schliessen"), wxDefaultPosition, wxDefaultSize, 0 );
+	bSizer12->Add( m_toggleBtnClose, 0, wxALL, 5 );
+
+
+	bSizer15->Add( bSizer12, 0, wxEXPAND, 5 );
+
+
+	this->SetSizer( bSizer15 );
+	this->Layout();
+	bSizer15->Fit( this );
+	m_timerHistogram.SetOwner( this, wxID_ANY );
+	m_timerHistogram.Start( 300 );
+
+
+	this->Centre( wxBOTH );
+
+	// Connect Events
+	m_panelHist->Connect( wxEVT_PAINT, wxPaintEventHandler( Histogram::OnPaintChartPanel ), NULL, this );
+	m_cbTone->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Histogram::OnCbTone ), NULL, this );
+	m_cbPause->Connect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Histogram::OnCbPause ), NULL, this );
+	m_toggleBtnClose->Connect( wxEVT_COMMAND_TOGGLEBUTTON_CLICKED, wxCommandEventHandler( Histogram::OnCloseDialog ), NULL, this );
+	this->Connect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( Histogram::OnHistogramTimer ) );
+}
+
+Histogram::~Histogram()
+{
+	// Disconnect Events
+	m_panelHist->Disconnect( wxEVT_PAINT, wxPaintEventHandler( Histogram::OnPaintChartPanel ), NULL, this );
+	m_cbTone->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Histogram::OnCbTone ), NULL, this );
+	m_cbPause->Disconnect( wxEVT_COMMAND_CHECKBOX_CLICKED, wxCommandEventHandler( Histogram::OnCbPause ), NULL, this );
+	m_toggleBtnClose->Disconnect( wxEVT_COMMAND_TOGGLEBUTTON_CLICKED, wxCommandEventHandler( Histogram::OnCloseDialog ), NULL, this );
+	this->Disconnect( wxID_ANY, wxEVT_TIMER, wxTimerEventHandler( Histogram::OnHistogramTimer ) );
+
 }
