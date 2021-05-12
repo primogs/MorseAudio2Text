@@ -88,6 +88,9 @@ set ( CXX_SRCS
     ${CMAKE_SOURCE_DIR}/../Seventythree/MorseGUI.cpp
     ${CMAKE_SOURCE_DIR}/../Seventythree/Global.cpp
     ${CMAKE_SOURCE_DIR}/../Seventythree/Audio.cpp
+    ${CMAKE_SOURCE_DIR}/../Seventythree/HistogramData.cpp
+    ${CMAKE_SOURCE_DIR}/../Seventythree/HistogramDialog.cpp
+    ${CMAKE_SOURCE_DIR}/../Seventythree/HistogramPanel.cpp
 )
 
 if(WIN32)

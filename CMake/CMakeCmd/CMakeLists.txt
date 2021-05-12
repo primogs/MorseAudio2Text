@@ -43,6 +43,7 @@ set ( CXX_SRCS
     ${CMAKE_SOURCE_DIR}/../../Seventythree/MainCmdLine.cpp
     ${CMAKE_SOURCE_DIR}/../../Seventythree/MorseDecode.cpp
     ${CMAKE_SOURCE_DIR}/../../Seventythree/MorseStatistic.cpp
+    ${CMAKE_SOURCE_DIR}/../../Seventythree/HistogramData.cpp
 )
 
 set_source_files_properties(
