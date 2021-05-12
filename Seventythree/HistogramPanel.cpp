@@ -60,6 +60,7 @@ HistogramPanel::~HistogramPanel()
  */	
 void HistogramPanel::FreeBuffer()
 {
+	mBins = 0;
 	if(mToneCounts != nullptr)
 		delete[] mToneCounts;
 	if(mPauseCounts != nullptr)
@@ -105,14 +106,17 @@ void HistogramPanel::Update()
 			ResizeBuffer(bins);
 		
 		mMaxPeriod = Global::mMD.GetMaxPeriod();
-		for(int i =1;i<mBins;i++)
-		{ 
-			mToneCounts[i] = Global::mMD.GetHistToneBinCount(i);
-			mPauseCounts[i] = Global::mMD.GetHistPauseBinCount(i);
-			if(mToneCounts[i]>mMaxCount)
-				mMaxCount = mToneCounts[i];
-			if(mPauseCounts[i]>mMaxCount)
-				mMaxCount = mPauseCounts[i];
+		if(mToneCounts!= nullptr and mPauseCounts!= nullptr)
+		{
+			for(int i =1;i<mBins ;i++)
+			{ 
+				mToneCounts[i] = Global::mMD.GetHistToneBinCount(i);
+				mPauseCounts[i] = Global::mMD.GetHistPauseBinCount(i);
+				if(mToneCounts[i]>mMaxCount)
+					mMaxCount = mToneCounts[i];
+				if(mPauseCounts[i]>mMaxCount)
+					mMaxCount = mPauseCounts[i];
+			}
 		}
 		Global::mMDMutex.unlock();
 	}
@@ -148,16 +152,19 @@ void HistogramPanel::Render(wxDC& dc)
  */
 void HistogramPanel::DrawBins(wxDC& dc,wxRect &rect,const int width, const int bottom )
 {
-	for(int i =1;i<mBins;i++)
+	if(mToneCounts!=nullptr and mPauseCounts!=nullptr)
 	{
-		const int x1 	= (i-1)*width+rect.GetX();
-		const int dyt 	= (mToneCounts[i]/static_cast<double>(mMaxCount))*(rect.GetHeight()-20);
-		const int dyp 	= (mPauseCounts[i]/static_cast<double>(mMaxCount))*(rect.GetHeight()-20);
-		
-		dc.SetPen(*wxBLUE_PEN);
-		dc.DrawRectangle(x1,bottom-dyp,width,dyp);
-		dc.SetPen(*wxRED_PEN);
-		dc.DrawRectangle(x1+3,bottom-dyt,width-6,dyt);
+		for(int i =1;i<mBins;i++)
+		{
+			const int x1 	= (i-1)*width+rect.GetX();
+			const int dyt 	= (mToneCounts[i]/static_cast<double>(mMaxCount))*(rect.GetHeight()-20);
+			const int dyp 	= (mPauseCounts[i]/static_cast<double>(mMaxCount))*(rect.GetHeight()-20);
+				
+			dc.SetPen(*wxBLUE_PEN);
+			dc.DrawRectangle(x1,bottom-dyp,width,dyp);
+			dc.SetPen(*wxRED_PEN);
+			dc.DrawRectangle(x1+3,bottom-dyt,width-6,dyt);
+		}
 	}
 }
 

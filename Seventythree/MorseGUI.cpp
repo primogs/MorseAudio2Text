@@ -314,7 +314,7 @@ Histogram::Histogram( wxWindow* parent, wxWindowID id, const wxString& title, co
 
 	bSizer12->Add( 0, 0, 1, wxEXPAND, 5 );
 
-	m_toggleBtnClose = new wxToggleButton( this, wxID_ANY, _("Schliessen"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_toggleBtnClose = new wxToggleButton( this, wxID_ANY, _("close"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer12->Add( m_toggleBtnClose, 0, wxALL, 5 );
 
 
