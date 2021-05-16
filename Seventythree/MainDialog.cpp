@@ -69,6 +69,7 @@ MainDialog::~MainDialog()
  */
 void MainDialog::SetupMorseDecode()
 {
+	
 	if(ConfigFile::IsConfigFileAvailable())
 	{
 		double value = 0.0;
@@ -209,8 +210,9 @@ void MainDialog::onTimerOut( wxTimerEvent& event )
 		{
 			mAddNewLine=0;
 		}
-		char txt[64];
-		Global::mMD.GetText(txt,64);
+		const int txtSize = 128;
+		char txt[txtSize];
+		Global::mMD.GetText(txt,txtSize);
 		const double envelope 	= Global::mMD.GetEnvelope();
 		const double threshold 	= Global::mMD.GetThreshold();
 		const double intervall 	= Global::mMD.GetTimeIntervall();
@@ -243,10 +245,10 @@ void MainDialog::onTimerOut( wxTimerEvent& event )
 		m_textCtrlSign->SetValue(signStr);
 		if(strlen(txt) > 0)
 		{
-			m_textCtrlOutput->AppendText(txt);
+			m_textCtrlOutput->AppendText(wxString::FromUTF8(txt));
 			mTimerNoReceive = timer + mFlushTimeout;
 		}
-		if(mAddNewLine==1)
+		if(mAddNewLine>=1)
 		{
 			m_textCtrlOutput->AppendText("\n");
 		}

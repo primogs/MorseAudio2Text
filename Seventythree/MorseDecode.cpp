@@ -563,6 +563,8 @@ const char* MorseDecode::DecodeCharacter(uint16_t sequence,int nSequenceLength)
 	const char * res = "";
 	switch(nSequenceLength)
 	{
+		case 0:
+		break;
 		case 1:
 		{
 			sequence &= 0b1;
@@ -614,16 +616,8 @@ const char* MorseDecode::DecodeCharacter(uint16_t sequence,int nSequenceLength)
 			}
 		}
 		break;
-		case 8:
-		{
-			int idx = GetIndex(sequence,SignSequence_8,sizeof(SignSequence_8)/sizeof(uint16_t));
-			if(idx != -1)
-			{
-				res = Sign_8[idx];
-			}
-		}
-		break;
 		default:
+			res = Sign_8[0];
 		break;
 	}
 	return res;
@@ -725,7 +719,7 @@ void MorseDecode::AppendToTxtBuffer(const char * character)
 	if(character != nullptr and mTextBuffer != nullptr)
 	{
 		int length = strlen(character);
-		if(mTextBufferLength-mTextBufferIndex >= length)
+		if(mTextBufferLength-mTextBufferIndex >= length and length>0)
 		{
 			memcpy(&mTextBuffer[mTextBufferIndex],character,length);
 			mTextBufferIndex += length;
